@@ -58,5 +58,23 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Eticaret.DL\Eticaret.DL.csproj">
+      <Project>{BC6C6FDE-9495-4647-AEF1-54D72150EEB8}</Project>
+      <Name>Eticaret.DL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Eticaret.Dto\Eticaret.Dto.csproj">
+      <Project>{7D8570A6-82B1-4361-99BB-81085E643E99}</Project>
+      <Name>Eticaret.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Eticaret.Entity\Eticaret.Entity.csproj">
+      <Project>{B4295A5B-3F58-4F2C-B567-C6DFD2212773}</Project>
+      <Name>Eticaret.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Eticaret.IL\Eticaret.IL.csproj">
+      <Project>{4460D1D0-9EEC-4543-B821-C1F128191B72}</Project>
+      <Name>Eticaret.IL</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

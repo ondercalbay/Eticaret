@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using Eticaret.Entity;
+using System.Data.Entity;
 
 namespace Eticaret.DL.EntityFramework
 {

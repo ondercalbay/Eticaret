@@ -45,7 +45,18 @@
     <Compile Include="IKullaniciManager.cs" />
     <Compile Include="IResimManager.cs" />
     <Compile Include="ISayfaManager.cs" />
+    <Compile Include="IUrunManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Eticaret.Dto\Eticaret.Dto.csproj">
+      <Project>{7D8570A6-82B1-4361-99BB-81085E643E99}</Project>
+      <Name>Eticaret.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Eticaret.Entity\Eticaret.Entity.csproj">
+      <Project>{B4295A5B-3F58-4F2C-B567-C6DFD2212773}</Project>
+      <Name>Eticaret.Entity</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

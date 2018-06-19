@@ -1,14 +1,14 @@
-﻿using System;
+﻿using Eticaret.DL.Abstract;
+using Eticaret.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Eticaret.DL.EntityFramework
 {
     public class EfKullaniciDal : IKullaniciDal
     {
-        private SanlilarContext _context = new SanlilarContext();
+        private EticaretContext _context = new EticaretContext();
 
         public Kullanici Add(Kullanici kullanici)
         {

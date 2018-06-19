@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Eticaret.Dto.Kategori;
+using Eticaret.Dto.Resim;
+using Eticaret.Dto.Sayfa;
+using Eticaret.Dto.Urun;
+using Eticaret.Entity;
 
 namespace Eticaret.BL
 {

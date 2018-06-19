@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Eticaret.Dto.Kullanici
 {
@@ -48,5 +44,4 @@ namespace Eticaret.Dto.Kullanici
         public int GuncelleyenId { get; set; }
 
     }
-}
 }

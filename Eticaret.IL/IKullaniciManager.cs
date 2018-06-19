@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Eticaret.Dto.Kullanici;
+using Eticaret.Entity;
 
 namespace Eticaret.IL
 {
-    class IKullaniciManager
+    public interface IKullaniciManager : IGenericManager<Kullanici, KullaniciListDto, KullaniciEditDto>
     {
+        KullaniciEditDto Authenticate(KullaniciLoginDto kullanici);
     }
 }

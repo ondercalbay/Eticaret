@@ -1,8 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Data;
+using System.Drawing;
+using System.Drawing.Imaging;
+using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Eticaret.CommonLibrary.Helpers
 {

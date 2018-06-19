@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Eticaret.Dto.Kategori;
+using Eticaret.Entity;
 
 namespace Eticaret.IL
 {
-    class IKategoriManager
+    public interface IKategoriManager : IGenericManager<Kategori, KategoriListDto, KategoriEditDto>
     {
+        KategoriEditDto Get(int? id);
     }
 }

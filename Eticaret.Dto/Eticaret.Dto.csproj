@@ -60,5 +60,11 @@
     <Compile Include="Urun\UrunListDto.cs" />
     <Compile Include="Urun\UrunResimEkleDto.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Eticaret.Entity\Eticaret.Entity.csproj">
+      <Project>{B4295A5B-3F58-4F2C-B567-C6DFD2212773}</Project>
+      <Name>Eticaret.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

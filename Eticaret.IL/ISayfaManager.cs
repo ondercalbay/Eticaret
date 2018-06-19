@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Eticaret.Dto.Sayfa;
+using Eticaret.Entity;
 
 namespace Eticaret.IL
 {
-    class ISayfaManager
+    public interface ISayfaManager : IGenericManager<Sayfa, SayfaListDto, SayfaEditDto>
     {
+        SayfaDetailDto Get(EnuSayfaTipleri termal_Hakkimizda);
     }
 }

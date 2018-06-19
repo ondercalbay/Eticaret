@@ -1,8 +1,10 @@
-﻿using System;
+﻿using AutoMapper;
+using Eticaret.DL.Abstract;
+using Eticaret.Dto.Urun;
+using Eticaret.Entity;
+using Eticaret.IL;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Eticaret.BL
 {

@@ -21,10 +21,30 @@ namespace Eticaret.WebUI
             //          "~/Scripts/bootstrap.js",
             //          "~/Scripts/respond.js"));
 
-            //bundles.Add(new StyleBundle("~/Content/css").Include(
-            //          "~/Content/bootstrap.css",
-            //          "~/Content/site.css",
-            //          "~/Content/font-awesome.min.css",
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                      "~/Content/bootstrap.css",
+                      "~/Content/font-awesome.min.css"));
+
+            bundles.Add(new StyleBundle("~/Content/canvas").Include(
+                    "~/Content/Thema/canvas/style.css",
+                    "~/Content/Thema/canvas/css/dark.css",
+                    "~/Content/Thema/canvas/css/font-icons.css",
+                    "~/Content/Thema/canvas/css/animate.css",
+                    "~/Content/Thema/canvas/css/magnific-popup.css",
+                    "~/Content/Thema/canvas/css/responsive.css"));
+
+            bundles.Add(new StyleBundle("~/Content/Slider").Include(
+        "~/Content/Thema/canvas//include/rs-plugin/css/settings.css",
+        "~/Content/Thema/canvas//include/rs-plugin/css/layers.css",
+        "~/Content/Thema/canvas//include/rs-plugin/css/navigation.css"));
+
+
+ 
+
+
+
+            //bundles.Add(new StyleBundle("~/Content/admin").Include(            
+            //          "~/Content/site.css",                      
             //          "~/Content/themes/sb/sb-admin.css"));
         }
     }

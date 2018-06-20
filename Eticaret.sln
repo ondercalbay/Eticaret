@@ -15,10 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eticaret.IL", "Eticaret.IL\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eticaret.CommonLibrary", "Eticaret.CommonLibrary\Eticaret.CommonLibrary.csproj", "{1C03FC21-C4A3-4F52-BE3B-155C5F5B6991}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eticaret.WebUI", "Eticaret.WebUI\Eticaret.WebUI.csproj", "{5C05047F-D873-413E-BC5C-62E14BA6D112}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eticaret.WebUI.Tests", "Eticaret.WebUI.Tests\Eticaret.WebUI.Tests.csproj", "{414AFB3F-D4DE-4B82-87AD-4330728F0099}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,14 +45,6 @@ Global
 		{1C03FC21-C4A3-4F52-BE3B-155C5F5B6991}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C03FC21-C4A3-4F52-BE3B-155C5F5B6991}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C03FC21-C4A3-4F52-BE3B-155C5F5B6991}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5C05047F-D873-413E-BC5C-62E14BA6D112}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5C05047F-D873-413E-BC5C-62E14BA6D112}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5C05047F-D873-413E-BC5C-62E14BA6D112}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5C05047F-D873-413E-BC5C-62E14BA6D112}.Release|Any CPU.Build.0 = Release|Any CPU
-		{414AFB3F-D4DE-4B82-87AD-4330728F0099}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{414AFB3F-D4DE-4B82-87AD-4330728F0099}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{414AFB3F-D4DE-4B82-87AD-4330728F0099}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{414AFB3F-D4DE-4B82-87AD-4330728F0099}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

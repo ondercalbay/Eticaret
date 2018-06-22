@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Şanlılar Yönetim</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/admin")
+    @*@Scripts.Render("~/bundles/modernizr")*@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
 </head>
@@ -20,19 +20,19 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Sayfalar">
-                    <a class="nav-link" href="/Sayfalar/Index">
+                    <a class="nav-link" href="/Yonetim/Sayfalar/Index">
                         <i class="fa fa-fw fa-dashboard"></i>
                         <span class="nav-link-text">Sayfalar</span>
                     </a>
                 </li>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Kategoriler">
-                    <a class="nav-link" href="/Kategoriler/Index">
+                    <a class="nav-link" href="/Yonetim/Kategoriler/Index">
                         <i class="fa fa-fw fa-area-chart"></i>
                         <span class="nav-link-text">Kategoriler</span>
                     </a>
                 </li>
                 <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Ürünler">
-                    <a class="nav-link" href="/Urunler/Index">
+                    <a class="nav-link" href="/Yonetim/Urunler/Index">
                         <i class="fa fa-fw fa-table"></i>
                         <span class="nav-link-text">Ürünler</span>
                     </a>
@@ -266,17 +266,17 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     <!-- Core plugin JavaScript-->
-    <script src="/Scripts/jquery-easing/jquery.easing.min.js"></script>
+    <script src="/Scripts/jquery.easing.1.3.js"></script>
     <!-- Page level plugin JavaScript-->
     <script src="/Scripts/chart.js/Chart.min.js"></script>
     <script src="/Scripts/datatables/jquery.dataTables.js"></script>
-    <script src="/Scripts/datatables/dataTables.bootstrap4.js"></script>
+    <script src="/Scripts/datatables/dataTables.bootstrap.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="/Content/themes/sb/js/sb-admin.js"></script>
+    <script src="/Content/Thema/sb/js/sb-admin.js"></script>
     <!-- Custom scripts for this page-->
-    <script src="/Content/themes/sb/js/sb-admin-charts.js"></script>
-    <script src="/Content/themes/sb/js/sb-admin-datatables.js"></script>
+    <script src="/Content/Thema/sb/js/sb-admin-charts.js"></script>
+    <script src="/Content/Thema/sb/js/sb-admin-datatables.js"></script>
     @RenderSection("scripts", required: false)
 
     <link rel="stylesheet" href="/Scripts/froala-editor/css/froala_editor.pkgd.min.css">
@@ -284,8 +284,8 @@
     <script type="text/javascript" src="/Scripts/froala-editor/js/froala_editor.pkgd.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/codemirror.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/mode/xml/xml.min.js"></script>
-    <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
-    <link href="/Content/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    @*<link href="~/Content/theme/base/jquery-ui.min.css" rel="stylesheet" />*@
+    @*<link href="/Content/font-awesome.min.css" rel="stylesheet" type="text/css" />*@
 
     <script>
         $(document).ready(function () {

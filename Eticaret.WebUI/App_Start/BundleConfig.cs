@@ -6,8 +6,9 @@ namespace Eticaret.WebUI
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
-            //bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-            //            "~/Scripts/jquery-{version}.js"));
+            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/popper.js"));
 
             //bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
             //            "~/Scripts/jquery.validate*"));
@@ -17,9 +18,9 @@ namespace Eticaret.WebUI
             //bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
             //            "~/Scripts/modernizr-*"));
 
-            //bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-            //          "~/Scripts/bootstrap.js",
-            //          "~/Scripts/respond.js"));
+            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                      "~/Scripts/bootstrap.js"));
+                      //"~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
@@ -32,6 +33,9 @@ namespace Eticaret.WebUI
                     "~/Content/Thema/canvas/css/animate.css",
                     "~/Content/Thema/canvas/css/magnific-popup.css",
                     "~/Content/Thema/canvas/css/responsive.css"));
+
+            bundles.Add(new StyleBundle("~/Content/admin").Include(
+                   "~/Content/Thema/sb/sb-admin.css"));
 
             bundles.Add(new StyleBundle("~/Content/Slider").Include(
         "~/Content/Thema/canvas//include/rs-plugin/css/settings.css",

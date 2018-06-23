@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Eticaret.DL.Abstract;
+using Eticaret.Dto.Kullanici;
 using Eticaret.Dto.Urun;
 using Eticaret.Entity;
 using Eticaret.IL;
@@ -11,19 +12,19 @@ namespace Eticaret.BL
     public class UrunManager : IUrunManager
     {
         private IUrunDal _dal { get; set; }
-        public int _userId { get; set; }
-        public UrunManager(int userId, IUrunDal dal)
+        public KullaniciSessionDto _user { get; set; }
+        public UrunManager(KullaniciSessionDto user, IUrunDal dal)
         {
-            _userId = userId;
+            _user = user;
             _dal = dal;
         }
 
         public UrunEditDto Add(UrunEditDto editDto)
         {
             Urun ent = Mapper.Map<Urun>(editDto);
-            ent.EkleyenId = _userId;
+            ent.EkleyenId = _user.Id;
             ent.EklemeZamani = DateTime.Now;
-            ent.GuncelleyenId = _userId;
+            ent.GuncelleyenId = _user.Id;
             ent.GuncellemeZamani = DateTime.Now;
             ent.Aktif = true;
             return Mapper.Map<UrunEditDto>(_dal.Add(ent));
@@ -31,7 +32,7 @@ namespace Eticaret.BL
 
         public void Delete(int id)
         {
-            _dal.Delete(id, _userId);
+            _dal.Delete(id, _user.Id);
         }
 
         public List<UrunListDto> Get(Urun filter)
@@ -47,7 +48,7 @@ namespace Eticaret.BL
         public UrunEditDto Update(UrunEditDto editDto)
         {
             Urun ent = Mapper.Map<Urun>(editDto);
-            ent.EkleyenId = _userId;
+            ent.EkleyenId = _user.Id;
             ent.EklemeZamani = DateTime.Now;
 
             return Mapper.Map<UrunEditDto>(_dal.Update(ent));

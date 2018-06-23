@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Eticaret.DL.Abstract;
 using Eticaret.Dto.Kategori;
+using Eticaret.Dto.Kullanici;
 using Eticaret.Entity;
 using Eticaret.IL;
 using System;
@@ -12,19 +13,19 @@ namespace Eticaret.BL
     public class KategoriManager : IKategoriManager
     {
         private IKategoriDal _dal { get; set; }
-        public int _userId { get; set; }
-        public KategoriManager(int userId, IKategoriDal dal)
+        public KullaniciSessionDto _user { get; set; }
+        public KategoriManager(KullaniciSessionDto user, IKategoriDal dal)
         {
-            _userId = userId;
+            _user = user;
             _dal = dal;
         }
 
         public KategoriEditDto Add(KategoriEditDto editDto)
         {
             Kategori ent = Mapper.Map<Kategori>(editDto);
-            ent.EkleyenId = _userId;
+            ent.EkleyenId = _user.Id;
             ent.EklemeZamani = DateTime.Now;
-            ent.GuncelleyenId = _userId;
+            ent.GuncelleyenId = _user.Id;
             ent.GuncellemeZamani = DateTime.Now;
             ent.Aktif = true;
             return Mapper.Map<KategoriEditDto>(_dal.Add(ent));
@@ -32,7 +33,7 @@ namespace Eticaret.BL
 
         public void Delete(int id)
         {
-            _dal.Delete(id, _userId);
+            _dal.Delete(id, _user.Id);
         }
 
         public List<KategoriListDto> Get(Kategori filter)
@@ -67,7 +68,7 @@ namespace Eticaret.BL
         public KategoriEditDto Update(KategoriEditDto editDto)
         {
             Kategori ent = Mapper.Map<Kategori>(editDto);
-            ent.GuncelleyenId = _userId;
+            ent.GuncelleyenId = _user.Id;
             ent.GuncellemeZamani = DateTime.Now;
             return Mapper.Map<KategoriEditDto>(_dal.Update(ent));
         }

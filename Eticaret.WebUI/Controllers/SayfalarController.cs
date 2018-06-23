@@ -7,7 +7,7 @@ using Eticaret.WebUI.Helpers;
 using System;
 using System.Web.Mvc;
 
-namespace Eticaret.WebUI.Areas.Yonetim.Controllers
+namespace Eticaret.WebUI.Controllers
 {
 
     [AuthorizeUserAccessLevel(UserRole = "admin sistem")]

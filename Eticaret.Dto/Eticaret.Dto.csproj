@@ -46,6 +46,7 @@
     <Compile Include="Kategori\KategoriDetailDto.cs" />
     <Compile Include="Kategori\KategoriEditDto.cs" />
     <Compile Include="Kategori\KategoriListDto.cs" />
+    <Compile Include="Kategori\KategoriMenuDto.cs" />
     <Compile Include="Kullanici\KullaniciEditDto.cs" />
     <Compile Include="Kullanici\KullaniciListDto.cs" />
     <Compile Include="Kullanici\KullaniciLoginDto.cs" />

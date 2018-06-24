@@ -17,9 +17,9 @@ namespace Eticaret.WebUI.Areas.Yonetim.Controllers
 {
     public class UrunlerController : Controller
     {
-        IUrunManager _UrunManager = new UrunManager(UserHelper.Id, new EfUrunDal());
-        IKategoriManager _KategoriManager = new KategoriManager(UserHelper.Id, new EfKategoriDal());
-        IResimManager _ResimManager = new ResimManager(UserHelper.Id, new EfResimDal());
+        IUrunManager _UrunManager = new UrunManager(UserHelper.Kullanici, new EfUrunDal());
+        IKategoriManager _KategoriManager = new KategoriManager(UserHelper.Kullanici, new EfKategoriDal());
+        IResimManager _ResimManager = new ResimManager(UserHelper.Kullanici, new EfResimDal());
 
         // GET: Urunlar
         public ActionResult Index()
@@ -126,5 +126,6 @@ namespace Eticaret.WebUI.Areas.Yonetim.Controllers
             _UrunManager.Delete(id);
             return RedirectToAction("");
         }
+
     }
 }

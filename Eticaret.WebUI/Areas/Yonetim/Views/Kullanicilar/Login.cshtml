@@ -1,0 +1,67 @@
+﻿@model Eticaret.Dto.Kullanici.KullaniciLoginDto
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>SB Admin - Start Bootstrap Template</title>
+
+    <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="/Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="/Content/themes/sb/sb-admin.css" rel="stylesheet" />
+</head>
+<body class="bg-dark">
+    <div class="container">
+        <div class="card card-login mx-auto mt-5">
+            <div class="card-header">Login</div>
+            <div class="card-body">
+                @using (Html.BeginForm())
+                {
+                    @Html.ValidationSummary();
+
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Kullanıcı Adı</label>
+                        <input class="form-control" id="KullaniciAdi" name="KullaniciAdi" type="text" aria-describedby="KullaniciAdi" placeholder="Kullanici Adı">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Şifre</label>
+                        <input class="form-control" id="Sifre" name="Sifre" type="password" placeholder="Şifre">
+                    </div>
+                    @*<div class="form-group">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox"> Remember Password
+                                </label>
+                            </div>
+                        </div>*@
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">Giriş<i class="fa fa-sign-in"></i></button>
+                    </div>
+                }
+                @*<div class="text-center">
+                        <a class="d-block small mt-3" href="register.html">Register an Account</a>
+                        <a class="d-block small" href="forgot-password.html">Forgot Password?</a>
+                    </div>*@
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JavaScript-->
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="/Scripts/bootstrap.bundle.min.js"></script>
+    <script src="/Scripts/jquery-easing/jquery.easing.min.js"></script>
+</body>
+</html>

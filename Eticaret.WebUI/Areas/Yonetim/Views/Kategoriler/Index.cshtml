@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Eticaret.Dto.Kategori.KategoriListDto>
+
+@{
+    ViewBag.Title = "Kategoriler";
+    ViewBag.Breadcrumb = "<li class='breadcrumb-item active'>Kategoriler</li>";
+    
+}
+
+<p>
+    <a class="btn btn-primary" href=@("/Yonetim/Kategoriler/Edit/")><i class="fas fa-plus"></i> Yeni</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Adi)
+        </th>
+        <th>İşlem</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adi)
+            </td>
+            <td>
+                @*@Html.ActionLink("Alt Kategori Ekle", "Edit", new { ustKategoriId = item.Id })*@
+                <a class="btn btn-sm btn-outline-primary" href=@("/Yonetim/Kategoriler/Edit?ustKategoriId="+item.Id)>
+                    <i class="fas fa-plus"></i> Alt Kategori Ekle
+                </a>
+
+                <a class="btn btn-sm btn-outline-primary" href=@("/Yonetim/Kategoriler/Edit/"+item.Id) data-toggle="tooltip" title="Düzenle">
+                    <i class="fas fa-pencil-alt"></i>
+                    Düzenle
+                </a>
+                <a class="btn btn-sm btn-outline-danger" href=@("/Yonetim/Kategoriler/Delete/" + item.Id) data-toggle="tooltip" title="Sil">
+                    <i class="fas fa-trash"></i>
+                    Sil
+                </a>
+            </td>
+        </tr>
+    }
+
+</table>

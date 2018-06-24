@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Eticaret.Dto.Kategori;
+using Eticaret.Dto.Kullanici;
 using Eticaret.Dto.Resim;
 using Eticaret.Dto.Sayfa;
 using Eticaret.Dto.Urun;
@@ -30,8 +31,13 @@ namespace Eticaret.BL
 
             Mapper.Initialize(cfg =>
             {
-                //cfg.CreateMap<List<Kullanici>, List<KullaniciListDto>>();
-                //cfg.CreateMap<List<KullaniciListDto>, List<Kullanici>>();
+                cfg.CreateMap<Kullanici, KullaniciListDto>();
+                cfg.CreateMap<KullaniciListDto, Kullanici>();
+                cfg.CreateMap<Kullanici, KullaniciLoginDto>();
+                cfg.CreateMap<KullaniciLoginDto, Kullanici>();
+                cfg.CreateMap<Kullanici, KullaniciSessionDto>();
+                cfg.CreateMap<KullaniciSessionDto, Kullanici>();
+
 
                 cfg.CreateMap<Sayfa, SayfaListDto>();
                 cfg.CreateMap<SayfaListDto, Sayfa>();

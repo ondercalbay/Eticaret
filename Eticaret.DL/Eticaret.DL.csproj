@@ -59,6 +59,11 @@
     <Compile Include="EntityFramework\EfResimDal.cs" />
     <Compile Include="EntityFramework\EfSayfaDal.cs" />
     <Compile Include="EntityFramework\EfUrunDal.cs" />
+    <Compile Include="Migrations\201806241057256_start.cs" />
+    <Compile Include="Migrations\201806241057256_start.Designer.cs">
+      <DependentUpon>201806241057256_start.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -70,6 +75,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201806241057256_start.resx">
+      <DependentUpon>201806241057256_start.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

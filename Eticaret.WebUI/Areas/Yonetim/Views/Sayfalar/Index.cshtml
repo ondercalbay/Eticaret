@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Eticaret.Dto.Sayfa.SayfaListDto>
+
+@{
+    ViewBag.Title = "Sayfalar";
+    ViewBag.Breadcrumb = "<li class='breadcrumb-item active'>Sayfalar</li>";
+}
+
+<p>
+    <a class="btn btn-primary" href=@("/Yonetim/Sayfalar/Edit/")><i class="fas fa-plus"></i> Yeni</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SayfaTipi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SayfaTipi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                <a class="btn btn-xs btn-primary" href=@("/Yonetim/Sayfalar/Edit/"+item.Id) data-toggle="tooltip" title="Düzenle">
+                    <i class="fas fa-pencil-alt"></i> Düzenle
+                </a>
+            </td>
+        </tr>
+    }
+
+</table>

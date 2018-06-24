@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Eticaret.Dto.Urun.UrunListDto>
+
+@{
+    ViewBag.Title = "Ürünler";
+    ViewBag.Breadcrumb = "<li class='breadcrumb-item active'>Ürünler</li>";
+}
+
+<p>
+    <a class="btn btn-primary" href=@("/Yonetim/Urunler/Edit/")><i class="fas fa-plus"></i> Yeni</a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Adi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fiyat)
+        </th>
+        <th>İşlem</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fiyat)
+            </td>
+            <td>
+                <a class="btn btn-sm btn-outline-primary" href=@(String.Format("/Yonetim/Urunler/Resimler/{0}",item.Id)) data-toggle="tooltip" title="Düzenle">
+                    <i class="fas fa-camera"></i>
+                    Resimler
+                </a>
+
+                <a class="btn btn-sm btn-outline-primary" href=@("/Yonetim/Urunler/Edit/"+item.Id) data-toggle="tooltip" title="Düzenle">
+                    <i class="fas fa-pencil-alt"></i>
+                    Düzenle
+                </a>
+
+                <a class="btn btn-sm btn-outline-danger" href=@("/Yonetim/Urunler/Delete/" + item.Id) data-toggle="tooltip" title="Sil">
+                    <i class="fas fa-trash"></i>
+                    Sil
+                </a>
+            </td>
+        </tr>
+    }
+
+</table>

@@ -3573,6 +3573,18 @@
     <Content Include="Scripts\froala-editor\js\languages\cs.js.map" />
     <Content Include="Scripts\froala-editor\js\languages\bs.js.map" />
     <Content Include="Scripts\froala-editor\js\languages\ar.js.map" />
+    <Content Include="Areas\Yonetim\Views\Kategoriler\Index.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Kategoriler\Edit.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Kullanicilar\Login.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Kullanicilar\Edit.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Kullanicilar\Index.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Resimler\Edit.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Resimler\Index.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Sayfalar\Edit.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Sayfalar\Index.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Urunler\Edit.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Urunler\Index.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Urunler\Resimler.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\froala-editor\js\plugins\align.min.js" />
     <Content Include="Scripts\froala-editor\js\plugins\char_counter.min.js" />
@@ -3708,11 +3720,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Yonetim\Models\" />
-    <Folder Include="Areas\Yonetim\Views\Kategoriler\" />
-    <Folder Include="Areas\Yonetim\Views\Kullanicilar\" />
-    <Folder Include="Areas\Yonetim\Views\Resimler\" />
-    <Folder Include="Areas\Yonetim\Views\Sayfalar\" />
-    <Folder Include="Areas\Yonetim\Views\Urunler\" />
     <Folder Include="Content\Thema\admin\" />
     <Folder Include="include\twitter\cache\" />
     <Folder Include="Models\" />

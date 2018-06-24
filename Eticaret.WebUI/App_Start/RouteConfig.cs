@@ -19,6 +19,8 @@ namespace Eticaret.WebUI
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
                 namespaces: new[] { "Eticaret.WebUI.Controllers" }
             );
+
+            
         }
     }
 }

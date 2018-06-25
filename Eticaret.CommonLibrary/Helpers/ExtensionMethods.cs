@@ -726,15 +726,11 @@ namespace Eticaret.CommonLibrary.Helpers
 
         public static string ToUrl(this string txt)
         {
-            Regex regx = new Regex("http://([\\w+?\\.\\w+])+([a-zA-Z0-9\\~\\!\\@\\#\\$\\%\\^\\&amp;\\*\\(\\)_\\-\\=\\+\\\\\\/\\?\\.\\:\\;\\'\\,]*)?", RegexOptions.IgnoreCase);
-
-            MatchCollection mactches = regx.Matches(txt);
-
-            foreach (Match match in mactches)
-            {
-                txt = txt.Replace(match.Value, "<a href='" + match.Value + "'>" + match.Value + "</a>");
-            }
-            return txt;
+            return txt.ToLower().Replace(' ', '-').Replace('ı', 'i').Replace('ğ', 'g').Replace('ş', 's').Replace('ö', 'o').Replace('ü', 'u')
+                .Replace(",", "").Replace(";", "").Replace("~", "").Replace("<", "").Replace(">", "").Replace("|", "")
+                .Replace("!", "").Replace("'", "").Replace("\"", "").Replace("%", "").Replace("&", "").Replace("/", "")
+                .Replace("(", "").Replace(")", "").Replace("[", "").Replace("]", "").Replace("{", "").Replace("}", "")
+                .Replace("?", "").Replace("\\", "").Replace("*", "").Replace("]", "").Replace(":", "").Replace("é", "");
         }
 
 

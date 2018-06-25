@@ -99,6 +99,7 @@ namespace Eticaret.BL
                 KategoriMenuDto altMenu = new KategoriMenuDto();
                 altMenu.Id = item.Id;
                 altMenu.Adi = item.Adi;
+                altMenu.Url = item.Url;
                 altMenu.AltMenuler = GetMenu(altMenu);
                 altmenuler.Add(altMenu);
             }            

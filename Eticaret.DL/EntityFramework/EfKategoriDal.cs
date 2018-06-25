@@ -54,6 +54,7 @@ namespace Eticaret.DL.EntityFramework
         {
             Kategori newEnt = Get(ent.Id);
             newEnt.Adi = ent.Adi;
+            newEnt.Url = ent.Url;
             newEnt.UstKategoriId = ent.UstKategoriId;
             newEnt.GuncelleyenId = ent.GuncelleyenId;
             newEnt.GuncellemeZamani = DateTime.Now;

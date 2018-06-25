@@ -3711,6 +3711,7 @@
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Home\_Slider.cshtml" />
+    <Content Include="Views\Urunler\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -3728,7 +3729,6 @@
     <Folder Include="Views\Kullanicilar\" />
     <Folder Include="Views\Resimler\" />
     <Folder Include="Views\Sayfalar\" />
-    <Folder Include="Views\Urunler\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Eticaret.BL\Eticaret.BL.csproj">

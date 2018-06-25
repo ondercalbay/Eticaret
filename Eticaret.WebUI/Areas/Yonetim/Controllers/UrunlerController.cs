@@ -22,9 +22,9 @@ namespace Eticaret.WebUI.Areas.Yonetim.Controllers
         IResimManager _ResimManager = new ResimManager(UserHelper.Kullanici, new EfResimDal());
 
         // GET: Urunlar
-        public ActionResult Index(string Kategori)
+        public ActionResult Index()
         {
-            return View(_UrunManager.Get(Kategori));
+            return View(_UrunManager.Get(new Urun() { Aktif = true }));
         }
 
         public ActionResult Edit(int? id)

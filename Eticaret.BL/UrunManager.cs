@@ -72,7 +72,7 @@ namespace Eticaret.BL
                 {
                     Adi = item.Adi,
                     Fiyat = item.Fiyat,
-                    ResimYolu = _resimDal.Get(item.AnaResimId).ResimYolu
+                    ResimYolu = item.AnaResimId == 0 ? "" : _resimDal.Get(item.AnaResimId).ResimYolu
                 });
             }
 

@@ -14,18 +14,24 @@ namespace Eticaret.WebUI
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
-                namespaces: new[] { "Eticaret.WebUI.Controllers" }
-            );
+              name: "Kategori",
+              url: "Urunler/{Kategori}",
+              defaults: new { controller = "Urunler", action = "Index", Kategori = UrlParameter.Optional },
+              namespaces: new[] { "Eticaret.WebUI.Controllers" }
+          );
 
             routes.MapRoute(
-                name: "Kategori",
-                url: "{controller}/{Kategori}/{id}",
-                defaults: new { controller = "Urunler", action = "Index", Kategori = UrlParameter.Optional },
-                namespaces: new[] { "Eticaret.WebUI.Controllers" }
-            );
+              name: "Default",
+              url: "{controller}/{action}/{id}",
+              defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+              namespaces: new[] { "Eticaret.WebUI.Controllers" }
+          );
+
+            
+
+          
+
+          
 
 
         }

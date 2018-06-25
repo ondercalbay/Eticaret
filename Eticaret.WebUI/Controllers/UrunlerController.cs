@@ -22,9 +22,9 @@ namespace Eticaret.WebUI.Controllers
         IResimManager _ResimManager = new ResimManager(UserHelper.Kullanici, new EfResimDal());
 
         // GET: Urunlar
-        public ActionResult Index()
+        public ActionResult Index(string Kategori)
         {
-            return View(_UrunManager.Get(new Urun()));
+            return View(_UrunManager.Get(Kategori));
         }
 
         public ActionResult Edit(int? id)

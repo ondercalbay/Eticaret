@@ -59,6 +59,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Eticaret.CommonLibrary\Eticaret.CommonLibrary.csproj">
+      <Project>{1C03FC21-C4A3-4F52-BE3B-155C5F5B6991}</Project>
+      <Name>Eticaret.CommonLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Eticaret.DL\Eticaret.DL.csproj">
       <Project>{BC6C6FDE-9495-4647-AEF1-54D72150EEB8}</Project>
       <Name>Eticaret.DL</Name>

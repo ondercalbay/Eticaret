@@ -1,93 +1,40 @@
-﻿
+﻿@model IEnumerable<Eticaret.Dto.Kategori.KategoriMenuDto>
 
-<ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Sayfalar">
-        <a class="nav-link" href="/Sayfalar/Index">
-            <i class="fa fa-fw fa-dashboard"></i>
-            <span class="nav-link-text">Sayfalar</span>
-        </a>
-    </li>
-    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Kategoriler">
-        <a class="nav-link" href="/Kategoriler/Index">
-            <i class="fa fa-fw fa-area-chart"></i>
-            <span class="nav-link-text">Kategoriler</span>
-        </a>
-    </li>
-    <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Ürünler">
-        <a class="nav-link" href="/Urunler/Index">
-            <i class="fa fa-fw fa-table"></i>
-            <span class="nav-link-text">Ürünler</span>
-        </a>
-    </li>
-    @*<li class="nav-item" data-toggle="tooltip" data-placement="right" title="Components">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-                <i class="fa fa-fw fa-wrench"></i>
-                <span class="nav-link-text">Components</span>
-            </a>
-            <ul class="sidenav-second-level collapse" id="collapseComponents">
-                <li>
-                    <a href="navbar.html">Navbar</a>
-                </li>
-                <li>
-                    <a href="cards.html">Cards</a>
-                </li>
-            </ul>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
-                <i class="fa fa-fw fa-file"></i>
-                <span class="nav-link-text">Example Pages</span>
-            </a>
-            <ul class="sidenav-second-level collapse" id="collapseExamplePages">
-                <li>
-                    <a href="login.html">Login Page</a>
-                </li>
-                <li>
-                    <a href="register.html">Registration Page</a>
-                </li>
-                <li>
-                    <a href="forgot-password.html">Forgot Password Page</a>
-                </li>
-                <li>
-                    <a href="blank.html">Blank Page</a>
-                </li>
-            </ul>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
-                <i class="fa fa-fw fa-sitemap"></i>
-                <span class="nav-link-text">Menu Levels</span>
-            </a>
-            <ul class="sidenav-second-level collapse" id="collapseMulti">
-                <li>
-                    <a href="#">Second Level Item</a>
-                </li>
-                <li>
-                    <a href="#">Second Level Item</a>
-                </li>
-                <li>
-                    <a href="#">Second Level Item</a>
-                </li>
-                <li>
-                    <a class="nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2">Third Level</a>
-                    <ul class="sidenav-third-level collapse" id="collapseMulti2">
-                        <li>
-                            <a href="#">Third Level Item</a>
-                        </li>
-                        <li>
-                            <a href="#">Third Level Item</a>
-                        </li>
-                        <li>
-                            <a href="#">Third Level Item</a>
-                        </li>
+<ul>
+    <li class="current"><a href="/"><div>Anasayfa</div><span>Anasayfa</span></a></li>
+    @foreach (var item in Model)
+    {
+        <li class="mega-menu">
+            <a href="#"><div>@item.Adi</div><span>@item.Adi</span></a>
+
+            @if (item.AltMenuler.Count > 0)
+            {
+                <div class="mega-menu-content style-2 clearfix">
+                    <ul class="mega-menu-column col-md-3">
+                        @foreach (var item2 in item.AltMenuler)
+                        {
+                            <li class="mega-menu-title">
+                                <a href="#"><div>@item2.Adi</div></a>
+
+                                @if (item2.AltMenuler.Count > 0)
+                                {
+                                    <ul>
+                                        @foreach (var item3 in item2.AltMenuler)
+                                        {
+                                            <li><a href="#" @item3.Id><div>@item3.Adi</div></a></li>
+                                        }
+                                    </ul>
+                                }
+                            </li>
+                        }
                     </ul>
-                </li>
-            </ul>
+                </div>
+            }
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-            <a class="nav-link" href="#">
-                <i class="fa fa-fw fa-link"></i>
-                <span class="nav-link-text">Link</span>
-            </a>
-        </li>*@
+
+
+    }
+    <li><a href="/Iletisim"><div>İLETİŞİM</div><span>İletişim</span></a></li>
 </ul>
+
+

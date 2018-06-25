@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Eticaret.CommonLibrary.Helpers;
 using Eticaret.DL.Abstract;
 using Eticaret.Dto.Kategori;
 using Eticaret.Dto.Kullanici;
@@ -84,9 +85,23 @@ namespace Eticaret.BL
                 int i = Convert.ToInt32(id.ToString());
                 return Mapper.Map<KategoriEditDto>(_dal.Get(i));
             }
+        }
 
-
-
+        public List<KategoriMenuDto> GetMenu(KategoriMenuDto menu)
+        {
+            var filter = new Kategori() { UstKategoriId = menu.Id, Aktif = true };
+            var altKategoriler = _dal.Get(filter);
+            List<KategoriMenuDto> altmenuler = new List<KategoriMenuDto>();
+            foreach (var item in altKategoriler)
+            {
+                KategoriMenuDto altMenu = new KategoriMenuDto();
+                altMenu.Id = item.Id;
+                altMenu.Adi = item.Adi;
+                altMenu.AltMenuler = GetMenu(altMenu);
+                altmenuler.Add(altMenu);
+            }            
+           
+            return altmenuler;
         }
     }
 }

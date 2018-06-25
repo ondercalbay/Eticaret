@@ -34,7 +34,7 @@ namespace Eticaret.DL.EntityFramework
         {
             var query = _context.Kategoriler.Where(t =>
            (filter.Id == 0 || t.Id == filter.Id) &&
-           (filter.UstKategoriId == null || t.UstKategoriId == filter.UstKategoriId) &&
+           (filter.UstKategoriId == null || (filter.UstKategoriId == -1 && t.UstKategoriId == null) || t.UstKategoriId == filter.UstKategoriId) &&
            (filter.Adi == null || t.Adi == filter.Adi) &&
            t.Aktif == true);
             return query.ToList();

@@ -17,14 +17,14 @@ namespace Eticaret.WebUI.Areas.Yonetim.Controllers
 {
     public class UrunlerController : Controller
     {
-        IUrunManager _UrunManager = new UrunManager(UserHelper.Kullanici, new EfUrunDal());
+        IUrunManager _UrunManager = new UrunManager(UserHelper.Kullanici, new EfUrunDal(), new EfKategoriDal(), new EfResimDal());
         IKategoriManager _KategoriManager = new KategoriManager(UserHelper.Kullanici, new EfKategoriDal());
         IResimManager _ResimManager = new ResimManager(UserHelper.Kullanici, new EfResimDal());
 
         // GET: Urunlar
-        public ActionResult Index()
+        public ActionResult Index(string Kategori)
         {
-            return View(_UrunManager.Get(new Urun()));
+            return View(_UrunManager.Get(Kategori));
         }
 
         public ActionResult Edit(int? id)

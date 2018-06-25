@@ -49,7 +49,7 @@ namespace Eticaret.DL.EntityFramework
 
         public Kullanici Get(int id)
         {
-            return _context.Kullanicilar.Where(k => k.Id == id && k.Aktif == true).FirstOrDefault();
+            return _context.Kullanicilar.Find(id);
         }
 
         public Kullanici Update(Kullanici ent)

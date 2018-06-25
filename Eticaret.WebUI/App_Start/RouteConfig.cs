@@ -20,7 +20,14 @@ namespace Eticaret.WebUI
                 namespaces: new[] { "Eticaret.WebUI.Controllers" }
             );
 
-            
+            routes.MapRoute(
+                name: "Kategori",
+                url: "{controller}/{Kategori}/{id}",
+                defaults: new { controller = "Urunler", action = "Index", Kategori = UrlParameter.Optional },
+                namespaces: new[] { "Eticaret.WebUI.Controllers" }
+            );
+
+
         }
     }
 }

@@ -17,7 +17,7 @@ namespace Eticaret.WebUI.Controllers
 {
     public class UrunlerController : Controller
     {
-        IUrunManager _UrunManager = new UrunManager(UserHelper.Kullanici, new EfUrunDal());
+        IUrunManager _UrunManager = new UrunManager(UserHelper.Kullanici, new EfUrunDal(), new EfKategoriDal(), new EfResimDal());
         IKategoriManager _KategoriManager = new KategoriManager(UserHelper.Kullanici, new EfKategoriDal());
         IResimManager _ResimManager = new ResimManager(UserHelper.Kullanici, new EfResimDal());
 

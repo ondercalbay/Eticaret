@@ -61,6 +61,7 @@
     <Compile Include="Urun\UrunEditDto.cs" />
     <Compile Include="Urun\UrunListDto.cs" />
     <Compile Include="Urun\UrunResimEkleDto.cs" />
+    <Compile Include="Urun\UrunVitrinDto.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Eticaret.Entity\Eticaret.Entity.csproj">

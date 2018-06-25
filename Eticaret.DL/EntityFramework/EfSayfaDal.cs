@@ -40,7 +40,7 @@ namespace Eticaret.DL.EntityFramework
 
         public Sayfa Get(int id)
         {
-            return Get(new Sayfa { Id = id }).FirstOrDefault();
+            return _context.Sayfalar.Find(id);
         }
 
         public Sayfa Get(EnuSayfaTipleri sayfaTipi)

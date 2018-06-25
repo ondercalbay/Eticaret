@@ -4,6 +4,7 @@
     {
         public int Id { get; set; }
         public string Adi { get; set; }
+        public string Link { get; set; }
         public int? UstKategoriId { get; set; }
     }
 }

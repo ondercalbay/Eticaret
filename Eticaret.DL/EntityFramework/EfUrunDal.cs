@@ -36,7 +36,7 @@ namespace Eticaret.DL.EntityFramework
 
         public Urun Get(int id)
         {
-            return Get(new Urun { Id = id }).FirstOrDefault();
+            return _context.Urunler.Find(id);
         }
 
         public Urun Update(Urun ent)

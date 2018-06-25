@@ -24,6 +24,7 @@ namespace Eticaret.BL
         public KategoriEditDto Add(KategoriEditDto editDto)
         {
             Kategori ent = Mapper.Map<Kategori>(editDto);
+            ent.Url = ent.Adi.ToUrl();
             ent.EkleyenId = _user.Id;
             ent.EklemeZamani = DateTime.Now;
             ent.GuncelleyenId = _user.Id;
@@ -69,6 +70,7 @@ namespace Eticaret.BL
         public KategoriEditDto Update(KategoriEditDto editDto)
         {
             Kategori ent = Mapper.Map<Kategori>(editDto);
+            ent.Url = ent.Adi.ToUrl();
             ent.GuncelleyenId = _user.Id;
             ent.GuncellemeZamani = DateTime.Now;
             return Mapper.Map<KategoriEditDto>(_dal.Update(ent));

@@ -37,7 +37,7 @@ namespace Eticaret.DL.EntityFramework
 
         public Resim Get(int id)
         {
-            return Get(new Resim { Id = id }).FirstOrDefault();
+            return _context.Resimler.Find(id);
         }
 
         public Resim Update(Resim ent)

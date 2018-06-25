@@ -4,6 +4,6 @@ namespace Eticaret.DL.Abstract
 {
     public interface IUrunDal : IGenericDal<Urun>
     {
-
+        
     }
 }

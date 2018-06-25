@@ -42,7 +42,12 @@ namespace Eticaret.DL.EntityFramework
 
         public Kategori Get(int id)
         {
-            return Get(new Kategori { Id = id }).FirstOrDefault();
+            return _context.Kategoriler.Find(id);
+        }
+
+        public Kategori Get(string kategoriUrl)
+        {
+            return _context.Kategoriler.Where(t => t.Url == kategoriUrl).FirstOrDefault();
         }
 
         public Kategori Update(Kategori ent)

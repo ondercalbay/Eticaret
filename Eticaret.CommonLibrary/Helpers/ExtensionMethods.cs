@@ -8,6 +8,7 @@ using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Eticaret.CommonLibrary.Helpers
 {
@@ -722,6 +723,20 @@ namespace Eticaret.CommonLibrary.Helpers
         //    ser.MaxJsonLength = 100000000;
         //    return ser.Deserialize<T>(jsonString);
         //}
+
+        public static string ToUrl(this string txt)
+        {
+            Regex regx = new Regex("http://([\\w+?\\.\\w+])+([a-zA-Z0-9\\~\\!\\@\\#\\$\\%\\^\\&amp;\\*\\(\\)_\\-\\=\\+\\\\\\/\\?\\.\\:\\;\\'\\,]*)?", RegexOptions.IgnoreCase);
+
+            MatchCollection mactches = regx.Matches(txt);
+
+            foreach (Match match in mactches)
+            {
+                txt = txt.Replace(match.Value, "<a href='" + match.Value + "'>" + match.Value + "</a>");
+            }
+            return txt;
+        }
+
 
         public static string TurkceKarakterdenDonustur(this string val)
         {

@@ -10,6 +10,10 @@ namespace Eticaret.Entity
         [MaxLength(100)]
         public string Adi { get; set; }
 
+        [Required]
+        [MaxLength(100)]
+        public string Url { get; set; }
+
         public int? UstKategoriId { get; set; }
     }
 }

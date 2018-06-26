@@ -360,6 +360,8 @@
     <Content Include="css\swiper.css" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
+    <Content Include="images\2018\6\193671e4-6c4d-420e-91e6-f19d451eb921.PNG" />
+    <Content Include="images\2018\6\9585b013-cd0c-41cf-a9e6-028104854e2c.jpg" />
     <Content Include="images\blank.svg" />
     <Content Include="images\camera_skins.png" />
     <Content Include="images\clients\1.png" />
@@ -3585,6 +3587,7 @@
     <Content Include="Areas\Yonetim\Views\Urunler\Edit.cshtml" />
     <Content Include="Areas\Yonetim\Views\Urunler\Index.cshtml" />
     <Content Include="Areas\Yonetim\Views\Urunler\Resimler.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\froala-editor\js\plugins\align.min.js" />
     <Content Include="Scripts\froala-editor\js\plugins\char_counter.min.js" />

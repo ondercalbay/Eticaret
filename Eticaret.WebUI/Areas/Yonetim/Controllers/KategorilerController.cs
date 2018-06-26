@@ -11,6 +11,7 @@ using System.Web.Mvc;
 
 namespace Eticaret.WebUI.Areas.Yonetim.Controllers
 {
+    [AuthorizeUserAccessLevel(UserRole = "admin sistem")]
     public class KategorilerController : Controller
     {
         IKategoriManager _manager = new KategoriManager(UserHelper.Kullanici, new EfKategoriDal());

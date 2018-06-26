@@ -20,7 +20,10 @@ namespace Eticaret.Entity
         [Display(Name = "Açıklama")]
         public string Aciklama { get; set; }
 
-        [Display(Name = "AnaResim")]
+        [Display(Name = "Ana Resim")]
         public int AnaResimId { get; set; }
+
+        [Display(Name = "Ürün Liste Tipi")]
+        public EnuUrunListeTipi UrunListeTipi { get; set; }
     }
 }

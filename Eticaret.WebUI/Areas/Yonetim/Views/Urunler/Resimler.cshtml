@@ -38,7 +38,11 @@
                         <img src=@item.ResimYolu alt="Lights" style="width:100%">
                     </a>
                     <hr />
-                    <a class="btn btn-xs btn-primary" href=@("/Yonetim/Urunler/FileDelete/"+item.Id+"?UrunId="+Model.Id) data-toggle="tooltip" title="Sil"><i class="fas fa-trash"></i>Sil</a>
+                    @if (item.Id != Model.AnaResimId)
+                    {
+                        <a class="btn btn-xs btn-outline-success" href=@("/Yonetim/Urunler/AnaResimYap/"+item.Id+"?UrunId="+Model.Id) data-toggle="tooltip" title="Ana Resim Yap"><i class="fas fa-bookmark"></i> Ana Resim Yap</a>
+                    }
+                    <a class="btn btn-xs btn-outline-danger" href=@("/Yonetim/Urunler/FileDelete/"+item.Id+"?UrunId="+Model.Id) data-toggle="tooltip" title="Sil"><i class="fas fa-trash"></i> Sil</a>
                 </div>
             </div>
         }

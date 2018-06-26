@@ -1,4 +1,5 @@
 ﻿using Eticaret.Dto.Resim;
+using Eticaret.Entity;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
@@ -25,5 +26,12 @@ namespace Eticaret.Dto.Urun
         public string Aciklama { get; set; }
 
         public ResimEditDto Resim { get; set; }
+
+        [Display(Name = "AnaResim")]
+        public int AnaResimId { get; set; }
+
+        [Display(Name = "Ürün Liste Tipi")]
+        public EnuUrunListeTipi UrunListeTipi { get; set; }
+
     }
 }

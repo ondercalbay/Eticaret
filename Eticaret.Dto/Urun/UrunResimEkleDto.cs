@@ -7,6 +7,8 @@ namespace Eticaret.Dto.Urun
     {
         public int Id { get; set; }
 
+        public int AnaResimId { get; set; }
+
         public List<ResimListDto> Resimler { get; set; }
     }
 }

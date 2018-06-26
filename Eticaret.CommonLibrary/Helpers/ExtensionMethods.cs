@@ -1,10 +1,12 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Security.Cryptography;
 using System.Text;
@@ -740,6 +742,23 @@ namespace Eticaret.CommonLibrary.Helpers
                            Replace('ğ', 'g').Replace("ı", "i").Replace('ö', 'o').Replace('ş', 's').Replace('ç', 'c').Replace('ü', 'u');
         }
 
+        public static string ToDisplay(this Enum value)
+        {
+
+            Type enumType = value.GetType();
+            var enumValue = Enum.GetName(enumType, value);
+            MemberInfo member = enumType.GetMember(enumValue)[0];
+
+            var attrs = member.GetCustomAttributes(typeof(DisplayAttribute), false);
+            var outString = ((DisplayAttribute)attrs[0]).Name;
+
+            if (((DisplayAttribute)attrs[0]).ResourceType != null)
+            {
+                outString = ((DisplayAttribute)attrs[0]).GetName();
+            }
+
+            return outString;
+        }
 
     }
 }

@@ -15,6 +15,7 @@ using System.Web.Mvc;
 
 namespace Eticaret.WebUI.Areas.Yonetim.Controllers
 {
+    [AuthorizeUserAccessLevel(UserRole = "admin sistem")]
     public class UrunlerController : Controller
     {
         IUrunManager _UrunManager = new UrunManager(UserHelper.Kullanici, new EfUrunDal(), new EfKategoriDal(), new EfResimDal());
@@ -74,6 +75,7 @@ namespace Eticaret.WebUI.Areas.Yonetim.Controllers
             filter.ElementId = id;
             UrunResimEkleDto model = new UrunResimEkleDto();
             model.Id = id;
+            model.AnaResimId = _UrunManager.Get(id).AnaResimId;
             model.Resimler = _ResimManager.Get(filter);
             return View(model);
         }
@@ -112,6 +114,15 @@ namespace Eticaret.WebUI.Areas.Yonetim.Controllers
             // after successfully uploading redirect the user
             return RedirectToAction("Resimler", "Urunler", new { Id = id });
         }
+
+        public ActionResult AnaResimYap(int id,int UrunId)
+        {
+            _UrunManager.AnaResimYap(UrunId,id);
+         
+            return RedirectToAction("Resimler", "Urunler", new { Id = UrunId });
+        }
+
+        
 
         public ActionResult FileDelete(int id, int UrunId)
         {

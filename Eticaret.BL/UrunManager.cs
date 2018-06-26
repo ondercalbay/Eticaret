@@ -54,8 +54,7 @@ namespace Eticaret.BL
         public UrunEditDto Update(UrunEditDto editDto)
         {
             Urun ent = Mapper.Map<Urun>(editDto);
-            ent.EkleyenId = _user.Id;
-            ent.EklemeZamani = DateTime.Now;
+            ent.GuncelleyenId = _user.Id;
 
             return Mapper.Map<UrunEditDto>(_dal.Update(ent));
         }
@@ -63,7 +62,30 @@ namespace Eticaret.BL
         public List<UrunVitrinDto> Get(string kategoriUrl)
         {
             Kategori kategori = _kategoriDal.Get(kategoriUrl);
-            List<Urun> urunler = _dal.Get(new Urun { KategoriId = kategori.Id });
+            List<Urun> urunler = _dal.Get(new Urun { KategoriId = kategori.Id , Aktif = true });
+
+            List<UrunVitrinDto> vitrin = new List<UrunVitrinDto>();
+            foreach (var item in urunler)
+            {
+                vitrin.Add(new UrunVitrinDto()
+                {
+                    Adi = item.Adi,
+                    Fiyat = item.Fiyat,
+                    ResimYolu = item.AnaResimId == 0 ? "" : _resimDal.Get(item.AnaResimId).ResimYolu
+                });
+            }
+
+            return vitrin;
+        }
+
+        public void AnaResimYap(int urunId, int resimId)
+        {
+            _dal.AnaResimGuncelle(urunId, resimId, _user.Id);
+        }
+
+        public List<UrunVitrinDto> GetUrunListe(EnuUrunListeTipi urunListeTipi)
+        {            
+            List<Urun> urunler = _dal.Get(new Urun { UrunListeTipi = urunListeTipi, Aktif = true });
 
             List<UrunVitrinDto> vitrin = new List<UrunVitrinDto>();
             foreach (var item in urunler)

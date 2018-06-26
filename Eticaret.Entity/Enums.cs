@@ -1,22 +1,33 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Eticaret.Entity
 {
     public enum EnuSayfaTipleri
     {
+        [Display(Name = "Seçiniz")]
         Seciniz = 0,
-        Termal_AnaSayfa = 1,
-        Termal_Hakkimizda = 2,
-        Termal_Eynal = 3,
-        Termal_Iletisim = 4
+        [Display(Name = "Anasayfa")]
+        AnaSayfa = 1,
+        [Display(Name = "Hakkımızda")]
+        Hakkimizda = 2,        
+        [Display(Name = "İletişim")]
+        Iletisim = 4
     }
 
     public enum EnuElementler
     {
         Urun = 1
+    }
+
+    public enum EnuUrunListeTipi
+    {
+        [Display(Name = "Normal")]
+        Normal = 0,
+        [Display(Name = "Çok Satanlar")]
+        CokSatanlar = 1,
+        [Display(Name = "Yeniler")]
+        Yeniler = 2,
+        [Display(Name = "İndirimdekiler")]
+        Indrimdekiler = 3
     }
 }

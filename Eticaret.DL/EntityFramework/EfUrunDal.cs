@@ -46,11 +46,21 @@ namespace Eticaret.DL.EntityFramework
             newEnt.Fiyat = ent.Fiyat;
             newEnt.KategoriId = ent.KategoriId;
             newEnt.Aciklama = ent.Aciklama;
+            newEnt.UrunListeTipi = ent.UrunListeTipi;
             newEnt.GuncelleyenId = ent.GuncelleyenId;
             newEnt.GuncellemeZamani = DateTime.Now;
             _context.SaveChanges();
 
             return ent;
+        }
+
+        public void AnaResimGuncelle(int id, int resimId,int kullaniciId)
+        {
+            Urun newEnt = Get(id);            
+            newEnt.AnaResimId = resimId;
+            newEnt.GuncelleyenId = kullaniciId;
+            newEnt.GuncellemeZamani = DateTime.Now;
+            _context.SaveChanges();
         }
     }
 }

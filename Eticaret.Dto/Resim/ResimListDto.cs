@@ -9,5 +9,7 @@ namespace Eticaret.Dto.Resim
         public EnuElementler ElementTipi { get; set; }
 
         public string ResimYolu { get; set; }
+
+        public bool IsAnaResim { get; set; }
     }
 }

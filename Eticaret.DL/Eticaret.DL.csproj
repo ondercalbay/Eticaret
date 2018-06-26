@@ -67,6 +67,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Eticaret.CommonLibrary\Eticaret.CommonLibrary.csproj">
+      <Project>{1C03FC21-C4A3-4F52-BE3B-155C5F5B6991}</Project>
+      <Name>Eticaret.CommonLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Eticaret.Entity\Eticaret.Entity.csproj">
       <Project>{B4295A5B-3F58-4F2C-B567-C6DFD2212773}</Project>
       <Name>Eticaret.Entity</Name>

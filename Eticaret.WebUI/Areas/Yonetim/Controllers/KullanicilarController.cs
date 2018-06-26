@@ -10,6 +10,7 @@ using System.Web.Security;
 
 namespace Eticaret.WebUI.Areas.Yonetim.Controllers
 {
+    
     public class KullanicilarController : Controller
     {
         private readonly IKullaniciManager _servis = new KullaniciManager(UserHelper.Kullanici, new EfKullaniciDal());

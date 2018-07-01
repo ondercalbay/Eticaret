@@ -35,8 +35,6 @@ namespace Eticaret.WebUI.Controllers
         [ChildActionOnly]
         public PartialViewResult _Slider()
         {
-            
-
             List<KategoriMenuDto> menu = _kategoriManager.GetMenu(new KategoriMenuDto() { Id = -1 });
             return PartialView("_Slider", menu);
         }

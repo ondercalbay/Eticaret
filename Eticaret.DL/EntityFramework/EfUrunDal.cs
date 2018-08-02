@@ -31,6 +31,7 @@ namespace Eticaret.DL.EntityFramework
             return _context.Urunler.Where(t =>
              (filter.Id == 0 || t.Id == filter.Id) &&
              (filter.KategoriId == 0 || t.KategoriId == filter.KategoriId) &&
+             (filter.UrunListeTipi == 0 || t.UrunListeTipi == filter.UrunListeTipi) &&
              t.Aktif == true).ToList();
         }
 

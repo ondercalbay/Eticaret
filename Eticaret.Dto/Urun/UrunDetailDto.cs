@@ -16,6 +16,6 @@ namespace Eticaret.Dto.Urun
         [AllowHtml]
         public string Aciklama { get; set; }
 
-        public List<string> ResimYolu { get; set; }
+        public List<string> ResimYollari { get; set; }
     }
 }

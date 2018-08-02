@@ -40,6 +40,11 @@ namespace Eticaret.DL.EntityFramework
             return _context.Resimler.Find(id);
         }
 
+        public List<string> GetResimYolu(EnuElementler elementTipi, int id)
+        {
+            return _context.Resimler.Where(i=>i.ElementTipi== elementTipi && i.ElementId == id && i.Aktif).Select(i=>i.ResimYolu).ToList();
+        }
+
         public Resim Update(Resim ent)
         {
             Resim newEnt = Get(ent.Id);

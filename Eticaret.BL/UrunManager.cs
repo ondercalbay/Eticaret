@@ -6,6 +6,7 @@ using Eticaret.Entity;
 using Eticaret.IL;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Eticaret.BL
 {
@@ -62,13 +63,14 @@ namespace Eticaret.BL
         public List<UrunVitrinDto> Get(string kategoriUrl)
         {
             Kategori kategori = _kategoriDal.Get(kategoriUrl);
-            List<Urun> urunler = _dal.Get(new Urun { KategoriId = kategori.Id , Aktif = true });
+            List<Urun> urunler = _dal.Get(new Urun { KategoriId = kategori.Id, Aktif = true });
 
             List<UrunVitrinDto> vitrin = new List<UrunVitrinDto>();
             foreach (var item in urunler)
             {
                 vitrin.Add(new UrunVitrinDto()
                 {
+                    Id = item.Id,
                     Adi = item.Adi,
                     Fiyat = item.Fiyat,
                     ResimYolu = item.AnaResimId == 0 ? "" : _resimDal.Get(item.AnaResimId).ResimYolu
@@ -84,7 +86,7 @@ namespace Eticaret.BL
         }
 
         public List<UrunVitrinDto> GetUrunListe(EnuUrunListeTipi urunListeTipi)
-        {            
+        {
             List<Urun> urunler = _dal.Get(new Urun { UrunListeTipi = urunListeTipi, Aktif = true });
 
             List<UrunVitrinDto> vitrin = new List<UrunVitrinDto>();
@@ -92,6 +94,7 @@ namespace Eticaret.BL
             {
                 vitrin.Add(new UrunVitrinDto()
                 {
+                    Id = item.Id,
                     Adi = item.Adi,
                     Fiyat = item.Fiyat,
                     ResimYolu = item.AnaResimId == 0 ? "" : _resimDal.Get(item.AnaResimId).ResimYolu
@@ -99,6 +102,23 @@ namespace Eticaret.BL
             }
 
             return vitrin;
+        }
+
+        public UrunDetailDto GetDetay(int id)
+        {
+            Urun urun = _dal.Get(id);
+
+            UrunDetailDto detay = new UrunDetailDto();
+
+
+            detay.Adi = urun.Adi;
+            detay.Fiyat = urun.Fiyat;
+            detay.Aciklama = urun.Aciklama;
+            detay.ResimYollari = _resimDal.GetResimYolu(EnuElementler.Urun, urun.Id);
+
+
+
+            return detay;
         }
     }
 }

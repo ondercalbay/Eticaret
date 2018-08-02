@@ -86,14 +86,13 @@ namespace Eticaret.WebUI.Areas.Yonetim.Controllers
             return RedirectToAction("");
 
         }
-
-
-
+        
         // GET: Resimlar/Delete/5
         public ActionResult Delete(int id)
         {
             _ResimManager.Delete(id);
             return RedirectToAction("");
         }
+ 
     }
 }

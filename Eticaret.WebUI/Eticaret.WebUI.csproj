@@ -3718,6 +3718,7 @@
     <Content Include="Views\Home\_UrunListe.cshtml" />
     <Content Include="Views\Home\_SosyalMedya.cshtml" />
     <Content Include="Views\Urunler\Detay.cshtml" />
+    <Content Include="Views\Home\Iletisim.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

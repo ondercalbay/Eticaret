@@ -1,46 +1,81 @@
 ﻿@model IEnumerable<Eticaret.Dto.Urun.UrunVitrinDto>
 
 @{
-    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<!-- Page Title
+        ============================================= -->
+<section id="page-title">
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Adi)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Fiyat)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ResimYolu)
-        </th>
-        <th></th>
-    </tr>
+    <div class="container clearfix">
+        <h1>@ViewBag.Title</h1>
+        <span>Ait Ürünler</span>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Anasayfa</a></li>
+            <li class="breadcrumb-item active" aria-current="page">@ViewBag.Title</li>
+        </ol>
+    </div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Adi)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fiyat)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ResimYolu)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
-    </tr>
-}
+</section><!-- #page-title end -->
+<!-- Content
+============================================= -->
+<section id="content">
 
-</table>
+    <div class="content-wrap">
+
+        <div class="container clearfix">
+
+            <!-- Portfolio Filter
+            ============================================= -->
+            @*<ul id="portfolio-filter" class="portfolio-filter clearfix">
+
+                <li class="activeFilter"><a href="#" data-filter="*">Hepsi</a></li>
+                <li><a href="#" data-filter=".pf-dress">Dress</a></li>
+                <li><a href="#" data-filter=".pf-Shoes">Shoes</a></li>
+                <li><a href="#" data-filter=".pf-sunglass">Sunglass</a></li>
+                <li><a href="#" data-filter=".pf-watch">Watch</a></li>
+
+            </ul>*@<!-- #portfolio-filter end -->
+
+            @*<div style="float:right; width:280px;">
+                <input class="range_23" />
+            </div>
+
+            <div class="clear"></div>*@
+
+            <!-- Shop
+            ============================================= -->
+            <div id="shop" class="shop grid-container clearfix">
+                @foreach (var item in Model)
+                {
+                    <div class="product clearfix pf-dress">
+                        <div class="product-image">
+                            <a href="#"><img src=@item.ResimYolu alt="Checked Short Dress"></a>
+                            @*<a href="#"><img src="images/shop/dress/1-1.jpg" alt="Checked Short Dress"></a>*@
+                            @*<div class="sale-flash">50% Off*</div>*@
+                            <div class="product-overlay">
+                                @*<a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>*@
+                                <a href="/include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Hızlı bakış</span></a>
+                            </div>
+                        </div>
+                        <div class="product-desc">
+                            <div class="product-title"><h3><a href="#">@item.Adi</a></h3></div>
+                            <div class="product-price"><del>@item.IndirimsizFiyat.ToString("C2")</del> <ins>@item.Fiyat.ToString("C2")</ins></div>
+                            @*<div class="product-rating">
+                                <i class="icon-star3"></i>
+                                <i class="icon-star3"></i>
+                                <i class="icon-star3"></i>
+                                <i class="icon-star3"></i>
+                                <i class="icon-star-half-full"></i>
+                            </div>*@
+                        </div>
+                    </div>
+                }
+            </div><!-- #shop end -->
+
+        </div>
+
+    </div>
+
+</section><!-- #content end -->

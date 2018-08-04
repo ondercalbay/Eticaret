@@ -17,16 +17,22 @@ namespace Eticaret.WebUI.Controllers
     {
         IKategoriManager _kategoriManager = new KategoriManager(UserHelper.Kullanici, new EfKategoriDal());
         IUrunManager _UrunManager = new UrunManager(UserHelper.Kullanici, new EfUrunDal(), new EfKategoriDal(), new EfResimDal());
+        ISayfaManager _SayfaManager = new SayfaManager(UserHelper.Kullanici, new EfSayfaDal());
         // GET: Home
         public ActionResult Index()
         {
             return View();
         }
 
+        public ActionResult Iletisim()
+        {
+            return View(_SayfaManager.Get(EnuSayfaTipleri.Iletisim));
+        }
+
         [ChildActionOnly]
         public PartialViewResult _Menu()
         {
-            
+
 
             List<KategoriMenuDto> menu = _kategoriManager.GetMenu(new KategoriMenuDto() { Id = -1 });
             return PartialView("_Menu", menu);
@@ -45,6 +51,8 @@ namespace Eticaret.WebUI.Controllers
             List<UrunVitrinDto> vitrin = _UrunManager.GetUrunListe(UrunListeTipi);
             return PartialView("_UrunListe", vitrin);
         }
+
+
 
 
     }

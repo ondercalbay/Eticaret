@@ -44,11 +44,12 @@ namespace Eticaret.BL
             var query = kategoriler.Select(i =>
                  new KategoriListDto
                  {
-                     Adi = GetAdi(i.UstKategoriId, i.Adi),
+                     Adi = i.Adi,
+                     UzunAdi = GetAdi(i.UstKategoriId, i.Adi),
                      UstKategoriAdi = Get(i.UstKategoriId).Adi,
                      Id = i.Id
                  }
-                ).OrderBy(i => i.Adi);
+                ).OrderBy(i => i.UzunAdi);
             return query.ToList();
         }
 

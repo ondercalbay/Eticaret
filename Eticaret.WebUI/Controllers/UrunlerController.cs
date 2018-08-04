@@ -24,12 +24,13 @@ namespace Eticaret.WebUI.Controllers
         // GET: Urunlar
         public ActionResult Index(string Kategori)
         {
+            ViewBag.Title = _KategoriManager.Get(new Kategori() { Url = Kategori }).FirstOrDefault().Adi;
             return View(_UrunManager.Get(Kategori));
         }
         public ActionResult Detay(int id)
-        { 
+        {
             UrunDetailDto editDto = _UrunManager.GetDetay(id);
-            
+
 
             return View(editDto);
         }

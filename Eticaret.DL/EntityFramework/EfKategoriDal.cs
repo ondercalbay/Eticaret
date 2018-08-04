@@ -37,6 +37,7 @@ namespace Eticaret.DL.EntityFramework
            (filter.Id == 0 || t.Id == filter.Id) &&
            (filter.UstKategoriId == null || (filter.UstKategoriId == -1 && t.UstKategoriId == null) || t.UstKategoriId == filter.UstKategoriId) &&
            (filter.Adi == null || t.Adi == filter.Adi) &&
+           (filter.Url == null || t.Url == filter.Url) &&
            t.Aktif == true);
             return query.ToList();
         }

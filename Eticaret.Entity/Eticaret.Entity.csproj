@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BaseEntity.cs" />
     <Compile Include="Enums.cs" />
+    <Compile Include="Firma.cs" />
     <Compile Include="Kategori.cs" />
     <Compile Include="Kullanici.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

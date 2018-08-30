@@ -14,5 +14,7 @@ namespace Eticaret.DL.EntityFramework
         public DbSet<Resim> Resimler { get; set; }
 
         public DbSet<Kullanici> Kullanicilar { get; set; }
+
+        public DbSet<Slider> Sliderlar { get; set; }
     }
 }

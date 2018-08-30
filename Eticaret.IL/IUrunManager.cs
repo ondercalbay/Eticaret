@@ -1,5 +1,4 @@
-﻿using Eticaret.Dto.Kategori;
-using Eticaret.Dto.Urun;
+﻿using Eticaret.Dto.Urun;
 using Eticaret.Entity;
 using System.Collections.Generic;
 

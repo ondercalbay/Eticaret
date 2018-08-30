@@ -16,7 +16,8 @@ namespace Eticaret.Entity
 
     public enum EnuElementler
     {
-        Urun = 1
+        Urun = 1,
+        Slider = 2
     }
 
     public enum EnuUrunListeTipi

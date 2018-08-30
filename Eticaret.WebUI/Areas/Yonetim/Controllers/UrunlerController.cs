@@ -85,7 +85,7 @@ namespace Eticaret.WebUI.Areas.Yonetim.Controllers
             if (file != null)
             {
                 //string pic = Path.GetFileName(file.FileName);
-                string yer = String.Format("/images/{0}/{1}", DateTime.Now.Year, DateTime.Now.Month);
+                string yer = string.Format("/images/{0}/{1}", DateTime.Now.Year, DateTime.Now.Month);
                 string path = Server.MapPath(yer);
                 // file is uploaded
                 if (!Directory.Exists(path))

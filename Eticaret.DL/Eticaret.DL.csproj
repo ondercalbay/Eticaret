@@ -52,7 +52,9 @@
     <Compile Include="Abstract\IKullaniciDal.cs" />
     <Compile Include="Abstract\IResimDal.cs" />
     <Compile Include="Abstract\ISayfaDal.cs" />
+    <Compile Include="Abstract\ISliderDal.cs" />
     <Compile Include="Abstract\IUrunDal.cs" />
+    <Compile Include="EntityFramework\EfSliderDal.cs" />
     <Compile Include="EntityFramework\EticaretContext.cs" />
     <Compile Include="EntityFramework\EfKategoriDal.cs" />
     <Compile Include="EntityFramework\EfKullaniciDal.cs" />

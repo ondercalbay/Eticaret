@@ -3587,6 +3587,8 @@
     <Content Include="Areas\Yonetim\Views\Urunler\Edit.cshtml" />
     <Content Include="Areas\Yonetim\Views\Urunler\Index.cshtml" />
     <Content Include="Areas\Yonetim\Views\Urunler\Resimler.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Sliderlar\Index.cshtml" />
+    <Content Include="Areas\Yonetim\Views\Sliderlar\Edit.cshtml" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\froala-editor\js\plugins\align.min.js" />
@@ -3653,6 +3655,7 @@
     <Compile Include="Areas\Yonetim\Controllers\KullanicilarController.cs" />
     <Compile Include="Areas\Yonetim\Controllers\ResimlerController.cs" />
     <Compile Include="Areas\Yonetim\Controllers\SayfalarController.cs" />
+    <Compile Include="Areas\Yonetim\Controllers\SliderlarController.cs" />
     <Compile Include="Areas\Yonetim\Controllers\UrunlerController.cs" />
     <Compile Include="Areas\Yonetim\YonetimAreaRegistration.cs" />
     <Compile Include="Controllers\HomeController.cs" />

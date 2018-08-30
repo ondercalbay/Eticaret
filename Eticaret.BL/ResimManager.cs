@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Eticaret.CommonLibrary.Helpers;
 using Eticaret.DL.Abstract;
 using Eticaret.Dto.Kullanici;
 using Eticaret.Dto.Resim;
@@ -6,6 +7,7 @@ using Eticaret.Entity;
 using Eticaret.IL;
 using System;
 using System.Collections.Generic;
+using System.IO;
 
 namespace Eticaret.BL
 {
@@ -31,6 +33,13 @@ namespace Eticaret.BL
 
         public void Delete(int id)
         {
+            ResimEditDto resim = Get(id);
+            
+            string path = FileHelper.MapPath(resim.ResimYolu);
+            if (File.Exists(path))
+            {
+                File.Delete(path);
+            }
             _dal.Delete(id, _user.Id);
         }
 
@@ -51,6 +60,26 @@ namespace Eticaret.BL
             ent.GuncellemeZamani = DateTime.Now;
 
             return Mapper.Map<ResimEditDto>(_dal.Update(ent));
+        }
+
+        public List<ResimEditDto> Get(EnuElementler elementTipi, int ElementId)
+        {
+            Resim filter = new Resim();
+            filter.Aktif = true;
+            filter.ElementTipi = elementTipi;
+            filter.ElementId = ElementId;
+            return Mapper.Map<List<ResimEditDto>>(_dal.Get(filter));
+
+        }
+
+        public void Delete(EnuElementler elementTipi, int elementId)
+        {
+            List<ResimEditDto> resimler = Get(elementTipi, elementId);
+            foreach (var item in resimler)
+            {                
+                Delete(item.Id);
+            }
+
         }
     }
 }

@@ -57,6 +57,8 @@
     <Compile Include="Sayfa\SayfaDetailDto.cs" />
     <Compile Include="Sayfa\SayfaEditDto.cs" />
     <Compile Include="Sayfa\SayfaListDto.cs" />
+    <Compile Include="Slider\SliderEditDto.cs" />
+    <Compile Include="Slider\SliderListDto.cs" />
     <Compile Include="Urun\UrunDetailDto.cs" />
     <Compile Include="Urun\UrunEditDto.cs" />
     <Compile Include="Urun\UrunListDto.cs" />

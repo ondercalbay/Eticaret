@@ -3,15 +3,15 @@ namespace Eticaret.DL.Migrations
     using Eticaret.DL.EntityFramework;
     using Eticaret.Entity;
     using System;
-    using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Eticaret.DL.EntityFramework.EticaretContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<EticaretContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
+
         }
 
         protected override void Seed(EticaretContext context)

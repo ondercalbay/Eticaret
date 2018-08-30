@@ -3,6 +3,7 @@ using Eticaret.Dto.Kategori;
 using Eticaret.Dto.Kullanici;
 using Eticaret.Dto.Resim;
 using Eticaret.Dto.Sayfa;
+using Eticaret.Dto.Slider;
 using Eticaret.Dto.Urun;
 using Eticaret.Entity;
 
@@ -64,6 +65,11 @@ namespace Eticaret.BL
                 cfg.CreateMap<ResimListDto, Resim>();
                 cfg.CreateMap<Resim, ResimEditDto>();
                 cfg.CreateMap<ResimEditDto, Resim>();
+
+                cfg.CreateMap<Slider, SliderListDto>();
+                cfg.CreateMap<SliderListDto, Slider>();
+                cfg.CreateMap<Slider, SliderEditDto>();
+                cfg.CreateMap<SliderEditDto, Slider>();
             }
             );
 

@@ -45,6 +45,7 @@
     <Compile Include="IKullaniciManager.cs" />
     <Compile Include="IResimManager.cs" />
     <Compile Include="ISayfaManager.cs" />
+    <Compile Include="ISliderManager.cs" />
     <Compile Include="IUrunManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -54,7 +54,7 @@ namespace Eticaret.BL
         }
 
         public ResimEditDto Update(ResimEditDto editDto)
-        {
+        {            
             Resim ent = Mapper.Map<Resim>(editDto);
             ent.GuncelleyenId = _user.Id;
             ent.GuncellemeZamani = DateTime.Now;

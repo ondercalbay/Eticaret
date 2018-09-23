@@ -1,14 +1,12 @@
 ﻿using Eticaret.BL;
 using Eticaret.DL.EntityFramework;
 using Eticaret.Dto.Kategori;
+using Eticaret.Dto.Slider;
 using Eticaret.Dto.Urun;
 using Eticaret.Entity;
 using Eticaret.IL;
 using Eticaret.WebUI.Helpers;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Eticaret.WebUI.Controllers
@@ -18,6 +16,7 @@ namespace Eticaret.WebUI.Controllers
         IKategoriManager _kategoriManager = new KategoriManager(UserHelper.Kullanici, new EfKategoriDal());
         IUrunManager _UrunManager = new UrunManager(UserHelper.Kullanici, new EfUrunDal(), new EfKategoriDal(), new EfResimDal());
         ISayfaManager _SayfaManager = new SayfaManager(UserHelper.Kullanici, new EfSayfaDal());
+        ISliderManager _SliderManager = new SliderManager(UserHelper.Kullanici, new EfSliderDal(), new EfResimDal());
         // GET: Home
         public ActionResult Index()
         {
@@ -41,8 +40,8 @@ namespace Eticaret.WebUI.Controllers
         [ChildActionOnly]
         public PartialViewResult _Slider()
         {
-            List<KategoriMenuDto> menu = _kategoriManager.GetMenu(new KategoriMenuDto() { Id = -1 });
-            return PartialView("_Slider", menu);
+            List<SliderListDto> slider = _SliderManager.GetSlider();
+            return PartialView("_Slider", slider);
         }
 
         [ChildActionOnly]

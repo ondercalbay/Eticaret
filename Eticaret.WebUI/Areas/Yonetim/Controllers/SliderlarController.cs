@@ -28,6 +28,7 @@ namespace Eticaret.WebUI.Areas.Yonetim.Controllers
             if (id == null)
             {
                 editDto = new SliderEditDto();
+                editDto.Resim = new ResimEditDto();
             }
             else
             {

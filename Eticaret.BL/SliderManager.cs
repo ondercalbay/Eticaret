@@ -8,8 +8,6 @@ using Eticaret.IL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Eticaret.BL
 {
@@ -65,13 +63,26 @@ namespace Eticaret.BL
             SliderEditDto dto = Mapper.Map<SliderEditDto>(ent);
             if (!(editDto.Resim is null))
             {
-                editDto.Resim.ElementId = dto.Id;
-                editDto.Resim.ElementTipi = EnuElementler.Slider;
+                var resim = _resimManager.Get(EnuElementler.Slider, dto.Id).FirstOrDefault();
+                resim.ResimYolu = editDto.Resim.ResimYolu;
+                editDto.Resim = resim;
+
                 dto.Resim = _resimManager.Update(editDto.Resim);
             }
 
 
             return Mapper.Map<SliderEditDto>(_dal.Update(ent));
+        }
+
+        public List<SliderListDto> GetSlider()
+        {
+            var slider = Mapper.Map<List<SliderListDto>>(_dal.Get(new Slider() { Aktif = true }));
+            foreach (var item in slider)
+            {
+                item.Resim = Mapper.Map<ResimEditDto>(_resimManager.Get(EnuElementler.Slider, item.Id).FirstOrDefault());
+            }
+
+            return slider;
         }
     }
 }

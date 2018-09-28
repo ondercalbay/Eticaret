@@ -13,6 +13,7 @@ namespace Eticaret.Entity
         public int ElementId { get; set; }
 
         [Required]
+        [MaxLength(200)]
         public string ResimYolu { get; set; }
 
     }

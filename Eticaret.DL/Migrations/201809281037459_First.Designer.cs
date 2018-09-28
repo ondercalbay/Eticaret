@@ -7,13 +7,13 @@ namespace Eticaret.DL.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class start : IMigrationMetadata
+    public sealed partial class First : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(start));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(First));
         
         string IMigrationMetadata.Id
         {
-            get { return "201806241057256_start"; }
+            get { return "201809281037459_First"; }
         }
         
         string IMigrationMetadata.Source

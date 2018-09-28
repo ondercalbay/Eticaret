@@ -11,7 +11,7 @@ namespace Eticaret.DL.Migrations
         {
             AutomaticMigrationsEnabled = true;
             AutomaticMigrationDataLossAllowed = true;
-
+            SetSqlGenerator("MySql.Data.MySqlClient", new MySql.Data.Entity.MySqlMigrationSqlGenerator());
         }
 
         protected override void Seed(EticaretContext context)

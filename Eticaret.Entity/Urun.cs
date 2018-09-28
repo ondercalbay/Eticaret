@@ -18,6 +18,7 @@ namespace Eticaret.Entity
         public decimal Fiyat { get; set; }
 
         [Display(Name = "Açıklama")]
+        [Column(TypeName = "Text")]
         public string Aciklama { get; set; }
 
         [Display(Name = "Ana Resim")]

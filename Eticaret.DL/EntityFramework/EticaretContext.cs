@@ -3,6 +3,7 @@ using System.Data.Entity;
 
 namespace Eticaret.DL.EntityFramework
 {
+    [DbConfigurationType(typeof(MySql.Data.Entity.MySqlEFConfiguration))]
     public class EticaretContext : DbContext
     {
         public DbSet<Sayfa> Sayfalar { get; set; }
@@ -16,5 +17,7 @@ namespace Eticaret.DL.EntityFramework
         public DbSet<Kullanici> Kullanicilar { get; set; }
 
         public DbSet<Slider> Sliderlar { get; set; }
+
+        public DbSet<Firma> Firmalar { get; set; }
     }
 }

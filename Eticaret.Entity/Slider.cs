@@ -8,9 +8,11 @@ namespace Eticaret.Entity
     {       
         [Required]
         [Display(Name = "Etiket")]
+        [MaxLength(500)]
         public string Title { get; set; }
 
         [Display(Name = "Url")]
+        [MaxLength(500)]
         public string Url { get; set; }
     }
 }

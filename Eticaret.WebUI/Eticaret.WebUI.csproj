@@ -3634,6 +3634,8 @@
     <Content Include="Areas\Yonetim\Views\Urunler\Resimler.cshtml" />
     <Content Include="Areas\Yonetim\Views\Sliderlar\Index.cshtml" />
     <Content Include="Areas\Yonetim\Views\Sliderlar\Edit.cshtml" />
+    <Content Include="fonts\revicons\revicons.ttf" />
+    <Content Include="fonts\revicons\revicons.woff" />
     <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\froala-editor\js\plugins\align.min.js" />

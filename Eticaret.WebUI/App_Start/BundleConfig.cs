@@ -38,9 +38,9 @@ namespace Eticaret.WebUI
                    "~/Content/Thema/sb/sb-admin.css"));
 
             bundles.Add(new StyleBundle("~/Content/Slider").Include(
-        "~/Content/Thema/canvas//include/rs-plugin/css/settings.css",
-        "~/Content/Thema/canvas//include/rs-plugin/css/layers.css",
-        "~/Content/Thema/canvas//include/rs-plugin/css/navigation.css"));
+        "~/Content/Thema/canvas/include/rs-plugin/css/settings.css",
+        "~/Content/Thema/canvas/include/rs-plugin/css/layers.css",
+        "~/Content/Thema/canvas/include/rs-plugin/css/navigation.css"));
 
 
  

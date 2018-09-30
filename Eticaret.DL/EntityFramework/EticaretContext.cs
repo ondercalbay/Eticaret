@@ -3,7 +3,7 @@ using System.Data.Entity;
 
 namespace Eticaret.DL.EntityFramework
 {
-    [DbConfigurationType(typeof(MySql.Data.Entity.MySqlEFConfiguration))]
+    //[DbConfigurationType(typeof(MySql.Data.Entity.MySqlEFConfiguration))]
     public class EticaretContext : DbContext
     {
         public DbSet<Sayfa> Sayfalar { get; set; }

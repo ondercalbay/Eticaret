@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Eticaret.Dto.Firma;
 using Eticaret.Dto.Kategori;
 using Eticaret.Dto.Kullanici;
 using Eticaret.Dto.Resim;
@@ -70,6 +71,11 @@ namespace Eticaret.BL
                 cfg.CreateMap<SliderListDto, Slider>();
                 cfg.CreateMap<Slider, SliderEditDto>();
                 cfg.CreateMap<SliderEditDto, Slider>();
+
+                cfg.CreateMap<Firma, FirmaListDto>();
+                cfg.CreateMap<FirmaListDto, Firma>();
+                cfg.CreateMap<Firma, FirmaEditDto>();
+                cfg.CreateMap<FirmaEditDto, Firma>();
             }
             );
 

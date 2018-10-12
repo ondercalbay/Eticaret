@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AutoMapperConfiguration.cs" />
+    <Compile Include="FirmaManager.cs" />
     <Compile Include="KategoriManager.cs" />
     <Compile Include="KullaniciManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

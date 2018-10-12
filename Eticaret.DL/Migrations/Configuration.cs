@@ -21,7 +21,6 @@ namespace Eticaret.DL.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
             context.Kullanicilar.AddOrUpdate(
-             p => p.KullaniciAdi,
              new Kullanici
              {
                  Adi = "admin",
@@ -36,6 +35,22 @@ namespace Eticaret.DL.Migrations
                  Aktif = true
              }
            );
+
+            context.Firmalar.AddOrUpdate(
+                new Firma
+                {
+                    Id = 1,
+                    Adi = "Firma Adý",
+                    EPosta = "xxx@xxx.com",
+                    Telefon = "X(XXX) XXX XX XX",
+                    Faks = "X(XXX) XXX XX XX",
+                    LogoUrl = "/images/logo.png",
+                    EklemeZamani = DateTime.Now,
+                    GuncelleyenId = 1,
+                    GuncellemeZamani = DateTime.Now,
+                    Aktif = true
+                }
+            );
             context.SaveChanges();
         }
     }

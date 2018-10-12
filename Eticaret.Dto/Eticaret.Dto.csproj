@@ -42,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Firma\FirmaEditDto.cs" />
+    <Compile Include="Firma\FirmaListDto.cs" />
     <Compile Include="Galeri\GaleriDetailDto.cs" />
     <Compile Include="Kategori\KategoriDetailDto.cs" />
     <Compile Include="Kategori\KategoriEditDto.cs" />
@@ -71,5 +73,6 @@
       <Name>Eticaret.Entity</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

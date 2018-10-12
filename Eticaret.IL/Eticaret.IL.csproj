@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IFirmaManager.cs" />
     <Compile Include="IGenericManager.cs" />
     <Compile Include="IKategoriManager.cs" />
     <Compile Include="IKullaniciManager.cs" />

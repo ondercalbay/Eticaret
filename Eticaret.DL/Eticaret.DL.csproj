@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IFirmaDal.cs" />
     <Compile Include="Abstract\IGenericDal.cs" />
     <Compile Include="Abstract\IKategoriDal.cs" />
     <Compile Include="Abstract\IKullaniciDal.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="Abstract\ISayfaDal.cs" />
     <Compile Include="Abstract\ISliderDal.cs" />
     <Compile Include="Abstract\IUrunDal.cs" />
+    <Compile Include="EntityFramework\EfFirmaDal.cs" />
     <Compile Include="EntityFramework\EfSliderDal.cs" />
     <Compile Include="EntityFramework\EticaretContext.cs" />
     <Compile Include="EntityFramework\EfKategoriDal.cs" />

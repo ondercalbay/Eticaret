@@ -1,13 +1,10 @@
 ﻿@model Eticaret.Dto.Urun.UrunEditDto
 
 @{
-    /**/
-
-    /**/
-
     ViewBag.Title = "Ürün Detay";
+    ViewBag.Breadcrumb = "<li class='breadcrumb-item active'>Slider</li><li class='breadcrumb-item active'>Detay</li>";
 }
-<h2>Ürün</h2>
+<h2>@ViewBag.Title</h2>
 
 
 @using (Html.BeginForm())
@@ -15,8 +12,7 @@
     @Html.AntiForgeryToken()
 
 <div class="form-horizontal">
-    <h4>Detay</h4>
-    <hr />
+    
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
         @Html.LabelFor(model => model.Adi, htmlAttributes: new { @class = "control-label col-md-2" })

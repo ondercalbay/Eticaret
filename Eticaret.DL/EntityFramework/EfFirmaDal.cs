@@ -29,7 +29,7 @@ namespace Eticaret.DL.EntityFramework
         public List<Firma> Get(Firma filter)
         {
             var query = _context.Firmalar.Where(t =>
-         (filter.Id == 0 || t.Id == filter.Id) &&         
+         (filter.Id == 0 || t.Id == filter.Id) &&
          t.Aktif == true);
             return query.ToList();
         }
@@ -46,7 +46,13 @@ namespace Eticaret.DL.EntityFramework
             newEnt.EPosta = ent.EPosta;
             newEnt.Faks = ent.Faks;
             newEnt.LogoUrl = ent.LogoUrl;
-            newEnt.Telefon = ent.Telefon;            
+            newEnt.Telefon = ent.Telefon;
+            newEnt.FaceBook = ent.FaceBook;
+            newEnt.Twitter = ent.Twitter;
+            newEnt.Instagram = ent.Instagram;
+            newEnt.Linkedin = ent.Linkedin;
+
+
             newEnt.GuncelleyenId = ent.GuncelleyenId;
             newEnt.GuncellemeZamani = DateTime.Now;
             _context.SaveChanges();

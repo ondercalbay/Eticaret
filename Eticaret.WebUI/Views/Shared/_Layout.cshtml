@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Eticaret.CommonLibrary.Helpers
+@using Eticaret.WebUI.Helpers
+<!DOCTYPE html>
 <html dir="ltr" lang="tr">
 <head>
 
@@ -92,8 +94,8 @@
                     <!-- Logo
                     ============================================= -->
                     <div id="logo">
-                        <a href="/" class="standard-logo" data-dark-logo="/images/logo-dark.png"><img src="~/images/bysanli.png" alt="Canvas Logo"></a>
-                        <a href="/" class="retina-logo" data-dark-logo="/images/logo-dark@2x.png"><img src="/images/bysanli@2x.png" alt="Canvas Logo"></a>
+                        <a href="/" class="standard-logo" data-dark-logo=@FirmaHelper.Firma.LogoUrl><img src=@FirmaHelper.Firma.LogoUrl alt="Canvas Logo"></a>
+                        <a href="/" class="retina-logo" data-dark-logo=@FirmaHelper.Firma.LogoUrl><img src=@FirmaHelper.Firma.LogoUrl alt="Canvas Logo"></a>
                     </div><!-- #logo end -->
                     <!-- Primary Navigation
                     ============================================= -->
@@ -130,56 +132,50 @@
                 <div class="container clearfix">
 
                     <div class="col_half">
-                        Copyrights &copy; 2014 All Rights Reserved by Canvas Inc.<br>
-                        <div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>
+                        Copyrights &copy; 2018 All Rights Reserved by Önder ÇALBAY<br>
+                        @*<div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>*@
                     </div>
 
                     <div class="col_half col_last tright">
                         <div class="fright clearfix">
-                            <a href="#" class="social-icon si-small si-borderless si-facebook">
-                                <i class="icon-facebook"></i>
-                                <i class="icon-facebook"></i>
-                            </a>
+                            @if (FirmaHelper.Firma.FaceBook.IsNotNull())
+                            {
+                                <a href=@FirmaHelper.Firma.FaceBook class="social-icon si-small si-borderless si-facebook" target="_blank">
+                                    <i class="icon-facebook"></i>
+                                    <i class="icon-facebook"></i>
+                                </a>
+                            }
 
-                            <a href="#" class="social-icon si-small si-borderless si-twitter">
-                                <i class="icon-twitter"></i>
-                                <i class="icon-twitter"></i>
-                            </a>
+                            @if (FirmaHelper.Firma.Twitter.IsNotNull())
+                            {
+                                <a href=@FirmaHelper.Firma.Twitter class="social-icon si-small si-borderless si-twitter" target="_blank">
+                                    <i class="icon-twitter"></i>
+                                    <i class="icon-twitter"></i>
+                                </a>
+                            }
+                            @if (FirmaHelper.Firma.Instagram.IsNotNull())
+                            {
+                                <a href=@FirmaHelper.Firma.Instagram class="social-icon si-small si-borderless si-instagram" target="_blank">
+                                    <i class="icon-instagram"></i>
+                                    <i class="icon-instagram"></i>
+                                </a>
+                            }
+                            @if (FirmaHelper.Firma.Linkedin.IsNotNull())
+                            {
+                                <a href=@FirmaHelper.Firma.Linkedin class="social-icon si-small si-borderless si-linkedin" target="_blank">
+                                    <i class="icon-linkedin"></i>
+                                    <i class="icon-linkedin"></i>
+                                </a>
+                            }
 
-                            <a href="#" class="social-icon si-small si-borderless si-gplus">
-                                <i class="icon-gplus"></i>
-                                <i class="icon-gplus"></i>
-                            </a>
 
-                            <a href="#" class="social-icon si-small si-borderless si-pinterest">
-                                <i class="icon-pinterest"></i>
-                                <i class="icon-pinterest"></i>
-                            </a>
-
-                            <a href="#" class="social-icon si-small si-borderless si-vimeo">
-                                <i class="icon-vimeo"></i>
-                                <i class="icon-vimeo"></i>
-                            </a>
-
-                            <a href="#" class="social-icon si-small si-borderless si-github">
-                                <i class="icon-github"></i>
-                                <i class="icon-github"></i>
-                            </a>
-
-                            <a href="#" class="social-icon si-small si-borderless si-yahoo">
-                                <i class="icon-yahoo"></i>
-                                <i class="icon-yahoo"></i>
-                            </a>
-
-                            <a href="#" class="social-icon si-small si-borderless si-linkedin">
-                                <i class="icon-linkedin"></i>
-                                <i class="icon-linkedin"></i>
-                            </a>
                         </div>
 
                         <div class="clear"></div>
 
-                        <i class="icon-envelope2"></i> info@canvas.com <span class="middot">&middot;</span> <i class="icon-headphones"></i> @Helpers.FirmaHelper <span class="middot">&middot;</span> <i class="icon-skype2"></i> CanvasOnSkype
+                        <i class="icon-envelope2"></i>  @Eticaret.WebUI.Helpers.FirmaHelper.Firma.EPosta <span class="middot">&middot;</span>
+                        <i class="icon-headphones"></i> @Eticaret.WebUI.Helpers.FirmaHelper.Firma.Telefon <span class="middot">&middot;</span>
+                        <i class="icon-file-text"></i> @Eticaret.WebUI.Helpers.FirmaHelper.Firma.Faks
                     </div>
 
                 </div>
@@ -285,7 +281,7 @@
 			apiRevoSlider.bind("revolution.slide.onloaded",function (e) {
 				SEMICOLON.slider.sliderParallaxDimensions();
             });
-            
+
         }); //ready
 
     </script>

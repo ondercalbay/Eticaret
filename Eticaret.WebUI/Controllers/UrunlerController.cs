@@ -1,16 +1,10 @@
 ﻿using Eticaret.BL;
 using Eticaret.DL.EntityFramework;
-using Eticaret.Dto.Kategori;
-using Eticaret.Dto.Resim;
 using Eticaret.Dto.Urun;
 using Eticaret.Entity;
 using Eticaret.IL;
 using Eticaret.WebUI.Helpers;
-using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Eticaret.WebUI.Controllers

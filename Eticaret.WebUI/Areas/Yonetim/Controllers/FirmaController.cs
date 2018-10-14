@@ -58,7 +58,7 @@ namespace Eticaret.WebUI.Areas.Yonetim.Controllers
 
 
             _manager.Update(editDto);
-
+            FirmaHelper.Firma = editDto;
             return RedirectToAction("");
 
         }

@@ -30,47 +30,77 @@
             ============================================= -->
             @*<ul id="portfolio-filter" class="portfolio-filter clearfix">
 
-                <li class="activeFilter"><a href="#" data-filter="*">Hepsi</a></li>
-                <li><a href="#" data-filter=".pf-dress">Dress</a></li>
-                <li><a href="#" data-filter=".pf-Shoes">Shoes</a></li>
-                <li><a href="#" data-filter=".pf-sunglass">Sunglass</a></li>
-                <li><a href="#" data-filter=".pf-watch">Watch</a></li>
+                    <li class="activeFilter"><a href="#" data-filter="*">Hepsi</a></li>
+                    <li><a href="#" data-filter=".pf-dress">Dress</a></li>
+                    <li><a href="#" data-filter=".pf-Shoes">Shoes</a></li>
+                    <li><a href="#" data-filter=".pf-sunglass">Sunglass</a></li>
+                    <li><a href="#" data-filter=".pf-watch">Watch</a></li>
 
-            </ul>*@<!-- #portfolio-filter end -->
-
+                </ul>*@<!-- #portfolio-filter end -->
             @*<div style="float:right; width:280px;">
-                <input class="range_23" />
-            </div>
+                    <input class="range_23" />
+                </div>
 
-            <div class="clear"></div>*@
+                <div class="clear"></div>*@
 
             <!-- Shop
             ============================================= -->
             <div id="shop" class="shop grid-container clearfix">
                 @foreach (var item in Model)
                 {
-                    <div class="product clearfix pf-dress">
+
+
+
+                    string href = "/Urunler/Detay/" + item.Id;
+
+                    <div class="product clearfix">
                         <div class="product-image">
-                            <a href="#"><img src=@item.ResimYolu alt="Checked Short Dress"></a>
-                            @*<a href="#"><img src="images/shop/dress/1-1.jpg" alt="Checked Short Dress"></a>*@
-                            @*<div class="sale-flash">50% Off*</div>*@
-                            <div class="product-overlay">
-                                @*<a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>*@
-                                <a href="/include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Hızlı bakış</span></a>
-                            </div>
+                            <a href=@href>
+                                <img src=@item.ResimYolu alt=@item.Adi>
+                                @*<a href="#"><img src="images/shop/dress/1-1.jpg" alt=@item.Adi></a>*@
+                                @*<div class="sale-flash">50% Off*</div>*@
+                                @*<div class="product-overlay">
+                                        <a href="#" class="add-to-cart"><i class="icon-shopping-cart"></i><span> Add to Cart</span></a>
+                                        <a href="include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Detaya git</span></a>
+                                    </div>*@
+
+                            </a>
                         </div>
+
+
                         <div class="product-desc">
-                            <div class="product-title"><h3><a href="#">@item.Adi</a></h3></div>
-                            <div class="product-price"><del>@item.IndirimsizFiyat.ToString("C2")</del> <ins>@item.Fiyat.ToString("C2")</ins></div>
-                            @*<div class="product-rating">
-                                <i class="icon-star3"></i>
-                                <i class="icon-star3"></i>
-                                <i class="icon-star3"></i>
-                                <i class="icon-star3"></i>
-                                <i class="icon-star-half-full"></i>
-                            </div>*@
+                            <a href=@href>
+                                <div class="product-title"><h3>@item.Adi</h3></div>
+                                <div class="product-price"><del>@item.Fiyat.ToString("C2")</del> <ins>@item.Fiyat.ToString("C2")</ins></div>
+                                @*<div class="product-rating">
+                                        <i class="icon-star3"></i>
+                                        <i class="icon-star3"></i>
+                                        <i class="icon-star3"></i>
+                                        <i class="icon-star3"></i>
+                                        <i class="icon-star-half-full"></i>
+                                    </div>*@
+                            </a>
                         </div>
+
                     </div>
+
+
+
+
+                    @*<div class="product clearfix pf-dress">
+                            <div class="product-image">
+                                <a href="#"><img src=@item.ResimYolu alt="Checked Short Dress"></a>
+                                <div class="product-overlay">
+
+                                    <a href="/include/ajax/shop-item.html" class="item-quick-view" data-lightbox="ajax"><i class="icon-zoom-in2"></i><span> Hızlı bakış</span></a>
+                                </div>
+                            </div>
+                            <div class="product-desc">
+                                <div class="product-title"><h3><a href="#">@item.Adi</a></h3></div>
+                                <div class="product-price"><del>@item.IndirimsizFiyat.ToString("C2")</del> <ins>@item.Fiyat.ToString("C2")</ins></div>
+
+                            </div>
+                        </div>*@
                 }
             </div><!-- #shop end -->
 

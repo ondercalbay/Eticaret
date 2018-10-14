@@ -22,5 +22,17 @@ namespace Eticaret.Dto.Firma
         [MaxLength(200)]
         [EmailAddress]
         public string EPosta { get; set; }
+
+        [MaxLength(200)]
+        public string FaceBook { get; set; }
+
+        [MaxLength(200)]
+        public string Twitter { get; set; }
+
+        [MaxLength(200)]
+        public string Instagram { get; set; }
+
+        [MaxLength(200)]
+        public string Linkedin { get; set; }
     }
 }

@@ -21,5 +21,17 @@ namespace Eticaret.Entity
         [MaxLength(200)]
         public string EPosta { get; set; }
 
+        [MaxLength(200)]
+        public string FaceBook { get; set; }
+
+        [MaxLength(200)]
+        public string Twitter { get; set; }
+
+        [MaxLength(200)]
+        public string Instagram { get; set; }
+
+        [MaxLength(200)]
+        public string Linkedin { get; set; }
+
     }
 }

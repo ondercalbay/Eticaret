@@ -17,7 +17,9 @@ namespace Eticaret.Dto.Urun
         [DisplayFormat(DataFormatString = "{0:N}", ApplyFormatInEditMode = true)]
         public decimal Fiyat { get; set; }
 
-        public decimal IndirimsizFiyat { get; set; }
+        [Display(Name = "İndirimsiz Fiyat")]
+        [DisplayFormat(DataFormatString = "{0:N}", ApplyFormatInEditMode = true)]
+        public decimal IndirimsizFiyat { get; set; } 
 
         public string ResimYolu { get; set; }
     }

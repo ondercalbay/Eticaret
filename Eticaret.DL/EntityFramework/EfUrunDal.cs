@@ -45,6 +45,7 @@ namespace Eticaret.DL.EntityFramework
             Urun newEnt = Get(ent.Id);
             newEnt.Adi = ent.Adi;
             newEnt.Fiyat = ent.Fiyat;
+            newEnt.IndirimsizFiyat = ent.IndirimsizFiyat;
             newEnt.KategoriId = ent.KategoriId;
             newEnt.Aciklama = ent.Aciklama;
             newEnt.UrunListeTipi = ent.UrunListeTipi;

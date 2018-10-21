@@ -24,7 +24,10 @@
             <div class="product-desc">
                 <a href=@href>
                     <div class="product-title"><h3>@item.Adi</h3></div>
-                    <div class="product-price"><del>@item.Fiyat.ToString("C2")</del> <ins>@item.Fiyat.ToString("C2")</ins></div>
+                    <div class="product-price">
+                        <del>@item.IndirimsizFiyat.ToString("C2")</del>
+                        <ins>@item.Fiyat.ToString("C2")</ins>
+                    </div>
                     @*<div class="product-rating">
                             <i class="icon-star3"></i>
                             <i class="icon-star3"></i>

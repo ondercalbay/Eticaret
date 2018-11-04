@@ -5,13 +5,22 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> @(ViewBag.Title + " " + FirmaHelper.Firma.Adi)</title>
-    @Styles.Render("~/Content/css")
-    @Styles.Render("~/Content/admin")
+
+
+    <link href="/Content/bootstrap.css" rel="stylesheet" />
+    <link href="/Content/font-awesome.min.css" rel="stylesheet" />
+
+    <link href="/Content/Thema/sb/sb-admin.css" rel="stylesheet" />
+    <link href="/Content/Thema/canvas/include/rs-plugin/css/settings.css" rel="stylesheet" />
+    <link href="/Content/Thema/canvas/include/rs-plugin/css/layers.css" rel="stylesheet" />
+    <link href="/Content/Thema/canvas/include/rs-plugin/css/navigation.css" rel="stylesheet" />
+
     <link href="/Content/Thema/Site.css" rel="stylesheet" />
     @*@Scripts.Render("~/bundles/modernizr")*@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
+
+    <title> @(ViewBag.Title + " " + FirmaHelper.Firma.Adi)</title>
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">

@@ -9,11 +9,11 @@ namespace Eticaret.Dto.Urun
         [Display(Name = "Adı")]
         public string Adi { get; set; }
         
-        [DisplayFormat(DataFormatString = "{0:N}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = true)]
         public decimal Fiyat { get; set; }
 
         [Display(Name = "İndirimsiz Fiyat")]
-        [DisplayFormat(DataFormatString = "{0:N}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = true)]
         public decimal IndirimsizFiyat { get; set; }
 
         [Display(Name = "Açıklama")]

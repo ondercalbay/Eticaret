@@ -15,6 +15,7 @@ namespace Eticaret.Dto.Urun
         [Display(Name = "Kategori")]
         public int KategoriId { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = true)]
         public decimal Fiyat { get; set; }
 
         public int ResimYolu { get; set; }

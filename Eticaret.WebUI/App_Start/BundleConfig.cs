@@ -22,20 +22,20 @@ namespace Eticaret.WebUI
                       "~/Scripts/bootstrap.js"));
                       //"~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/font-awesome.min.css"));
+            //bundles.Add(new StyleBundle("~/Content/css").Include(
+            //          "~/Content/bootstrap.css",
+            //          "~/Content/font-awesome.min.css"));
 
-            bundles.Add(new StyleBundle("~/Content/canvas").Include(
-                    "~/Content/Thema/canvas/style.css",
-                    "~/Content/Thema/canvas/css/dark.css",
-                    "~/Content/Thema/canvas/css/font-icons.css",
-                    "~/Content/Thema/canvas/css/animate.css",
-                    "~/Content/Thema/canvas/css/magnific-popup.css",
-                    "~/Content/Thema/canvas/css/responsive.css"));
+            //bundles.Add(new StyleBundle("~/Content/canvas").Include(
+            //        "~/Content/Thema/canvas/style.css",
+            //        "~/Content/Thema/canvas/css/dark.css",
+            //        "~/Content/Thema/canvas/css/font-icons.css",
+            //        "~/Content/Thema/canvas/css/animate.css",
+            //        "~/Content/Thema/canvas/css/magnific-popup.css",
+            //        "~/Content/Thema/canvas/css/responsive.css"));
 
-            bundles.Add(new StyleBundle("~/Content/admin").Include(
-                   "~/Content/Thema/sb/sb-admin.css"));
+            //bundles.Add(new StyleBundle("~/Content/admin").Include(
+            //       "~/Content/Thema/sb/sb-admin.css"));
 
             bundles.Add(new StyleBundle("~/Content/Slider").Include(
         "~/Content/Thema/canvas/include/rs-plugin/css/settings.css",

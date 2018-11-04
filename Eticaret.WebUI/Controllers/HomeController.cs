@@ -20,7 +20,12 @@ namespace Eticaret.WebUI.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+            return View(_SayfaManager.Get(EnuSayfaTipleri.AnaSayfa));
+        }
+
+        public ActionResult Hakkimizda()
+        {
+            return View(_SayfaManager.Get(EnuSayfaTipleri.Hakkimizda));
         }
 
         public ActionResult Iletisim()
@@ -49,6 +54,12 @@ namespace Eticaret.WebUI.Controllers
         {
             List<UrunVitrinDto> vitrin = _UrunManager.GetUrunListe(UrunListeTipi);
             return PartialView("_UrunListe", vitrin);
+        }
+
+        [ChildActionOnly]
+        public PartialViewResult _Sayfa(EnuSayfaTipleri SayfaTipi)
+        {          
+            return PartialView("_Sayfa", _SayfaManager.Get(SayfaTipi));
         }
 
 

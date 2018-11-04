@@ -288,8 +288,8 @@
 
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Scripts/jquery")
+    @Scripts.Render("~/Scripts/bootstrap")
     <script src="/Scripts/modernizr-2.8.3.js"></script>
     <!-- Core plugin JavaScript-->
     <script src="/Scripts/jquery.easing.1.3.js"></script>
@@ -312,11 +312,33 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.3.0/mode/xml/xml.min.js"></script>
     @*<link href="~/Content/theme/base/jquery-ui.min.css" rel="stylesheet" />*@
     @*<link href="/Content/font-awesome.min.css" rel="stylesheet" type="text/css" />*@
-
+    <script src="/Scripts/ckeditor/ckeditor.js"></script>
     <script>
         $(document).ready(function () {
-            $('textarea#Html').froalaEditor();
-            $('textarea#Aciklama').froalaEditor();
+            //$('textarea#Html').froalaEditor();
+            //$('textarea#Aciklama').froalaEditor();
+            if ($('textarea#Aciklama').length > 0) {
+                var editor = CKEDITOR.instances['Aciklama'];
+                if (editor) {
+                    editor.destroy(true);
+                }
+                CKEDITOR.replace('Aciklama', {
+                    enterMode: CKEDITOR.ENTER_BR,
+                });
+            } 
+
+            if ($('textarea#Html').length > 0) {
+                var editor = CKEDITOR.instances['Html'];
+                if (editor) {
+                    editor.destroy(true);
+                }
+                CKEDITOR.replace('Html', {
+                    enterMode: CKEDITOR.ENTER_BR,
+                });
+            } 
+
+            CKFinder.setupCKEditor(null, '@Url.Content("~/ckeditor/ckfinder/")');
+
         });
 
         jQuery.extend(jQuery.validator.methods, {

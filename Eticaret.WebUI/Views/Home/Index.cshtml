@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Eticaret.Dto.Kategori.KategoriMenuDto>
+﻿@model Eticaret.Dto.Sayfa.SayfaDetailDto
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -94,55 +94,8 @@
 
         </div>
 
-        <div class="section nobottommargin">
-            <div class="container clearfix">
 
-                <div class="col_one_fourth nobottommargin">
-                    <div class="feature-box fbox-plain fbox-dark fbox-small">
-                        <div class="fbox-icon">
-                            <i class="icon-thumbs-up2"></i>
-                        </div>
-                        <h3>100% ORJİNAL</h3>
-                        <p class="notopmargin">Orijinal Markaların satışını garanti ediyoruz.</p>
-                    </div>
-                </div>
-
-                <div class="col_one_fourth nobottommargin">
-                    <div class="feature-box fbox-plain fbox-dark fbox-small">
-                        <div class="fbox-icon">
-                            <i class="icon-credit-cards"></i>
-                        </div>
-                        <h3>Ödeme Seçenekleri</h3>
-                        <p class="notopmargin">Kredi kartı ve kapıda ödeme seçeneğiniz mevcuttur.</p>
-                    </div>
-                </div>
-
-                <div class="col_one_fourth nobottommargin">
-                    <div class="feature-box fbox-plain fbox-dark fbox-small">
-                        <div class="fbox-icon">
-                            <i class="icon-truck2"></i>
-                        </div>
-                        <h3>Ücretsiz Kargo</h3>
-                        <p class="notopmargin">1.000 TL üzeri siparişlerde Ücretsiz Teslimat.</p>
-                    </div>
-                </div>
-
-                <div class="col_one_fourth nobottommargin col_last">
-                    <div class="feature-box fbox-plain fbox-dark fbox-small">
-                        <div class="fbox-icon">
-                            <i class="icon-undo"></i>
-                        </div>
-                        <h3>30-GÜN DEĞİŞİM</h3>
-                        <p class="notopmargin">
-                            30 gün içinde satın alınan malları iade edin veya değiştirin.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
+        @{Html.RenderAction("_Sayfa", "Home", new { SayfaTipi = Eticaret.Entity.EnuSayfaTipleri.AnaSayfa });}
     </div>
 
 </section>

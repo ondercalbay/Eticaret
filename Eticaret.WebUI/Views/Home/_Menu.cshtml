@@ -5,7 +5,7 @@
     @foreach (var item in Model)
     {
         <li class="mega-menu">
-            <a href="#"><div>@item.Adi</div><span>@item.Adi</span></a>
+            <a href=@("/Urunler/" + item.Url)><div>@item.Adi</div><span>@item.Adi</span></a>
 
             @if (item.AltMenuler.Count > 0)
             {
@@ -14,7 +14,7 @@
                         @foreach (var item2 in item.AltMenuler)
                         {
                             <li class="mega-menu-title">
-                                <a href="#"><div>@item2.Adi</div></a>
+                                <a href=@("/Urunler/" + item2.Url)><div>@item2.Adi</div></a>
 
                                 @if (item2.AltMenuler.Count > 0)
                                 {

@@ -1,0 +1,28 @@
+﻿@model Eticaret.Dto.Sayfa.SayfaDetailDto
+
+@{
+    ViewBag.Title = Model.Title;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!-- Page Title
+        ============================================= -->
+<section id="page-title">
+    <div class="container clearfix">
+        <h1>@Model.Title</h1>
+        @*<span>Ait Ürünler</span>*@
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Anasayfa</a></li>
+            <li class="breadcrumb-item active" aria-current="page">@ViewBag.Title</li>
+        </ol>
+    </div>
+</section><!-- #page-title end -->
+
+<section id="content">
+    <div class="content-wrap">
+        <div class="container clearfix">
+            @Html.Raw(Model.Html)
+        </div>
+    </div>
+</section>

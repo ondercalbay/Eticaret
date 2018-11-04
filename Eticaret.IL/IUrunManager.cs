@@ -6,9 +6,12 @@ namespace Eticaret.IL
 {
     public interface IUrunManager : IGenericManager<Urun, UrunListDto, UrunEditDto>
     {
-       List<UrunVitrinDto> Get(string kategori);
+        List<UrunVitrinDto> Get(string kategori);
+
         void AnaResimYap(int urunId, int resimId);
+
         List<UrunVitrinDto> GetUrunListe(EnuUrunListeTipi urunListeTipi);
+
         UrunDetailDto GetDetay(int id);
     }
 }

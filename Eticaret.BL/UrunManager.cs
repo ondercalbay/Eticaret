@@ -63,9 +63,22 @@ namespace Eticaret.BL
         public List<UrunVitrinDto> Get(string kategoriUrl)
         {
             Kategori kategori = _kategoriDal.Get(kategoriUrl);
-            List<Urun> urunler = _dal.Get(new Urun { KategoriId = kategori.Id, Aktif = true });
+            return Get(kategori);
+        }
 
+        private List<UrunVitrinDto> Get(Kategori kategori)
+        {
             List<UrunVitrinDto> vitrin = new List<UrunVitrinDto>();
+
+            List<Kategori> altKategoriler = _kategoriDal.Get(new Kategori { UstKategoriId = kategori.Id });
+
+            foreach (var item in altKategoriler)
+            {
+                vitrin.AddRange(Get(item));
+            }
+
+            List<Urun> urunler = _dal.Get(new Urun { KategoriId = kategori.Id, Aktif = true });
+            
             foreach (var item in urunler)
             {
                 vitrin.Add(new UrunVitrinDto()

@@ -35,7 +35,7 @@ namespace Eticaret.WebUI.Controllers
             }
             else
             {
-                editDto = _manager.Get(Convert.ToInt32(id));
+                editDto = _manager.Get(id);
             }
 
             IEnumerable<KategoriListDto> kategoriler = _manager.Get(new Kategori());

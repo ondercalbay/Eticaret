@@ -6,7 +6,7 @@ namespace Eticaret.WebUI
     {
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+            bundles.Add(new ScriptBundle("~/Scripts/jquery").Include(
                         "~/Scripts/jquery-{version}.js"
                         ));
 
@@ -18,7 +18,7 @@ namespace Eticaret.WebUI
             //bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
             //            "~/Scripts/modernizr-*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+            bundles.Add(new ScriptBundle("~/Scripts/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
                       //"~/Scripts/respond.js"));
 

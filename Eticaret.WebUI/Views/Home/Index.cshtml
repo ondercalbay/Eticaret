@@ -1,6 +1,8 @@
-﻿@model Eticaret.Dto.Sayfa.SayfaDetailDto
+﻿@using Eticaret.WebUI.Helpers
+
+@model Eticaret.Dto.Sayfa.SayfaDetailDto
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = FirmaHelper.Firma.Adi;
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 

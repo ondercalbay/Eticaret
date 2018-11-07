@@ -86,6 +86,7 @@ namespace Eticaret.BL
                     Id = item.Id,
                     Adi = item.Adi,
                     Fiyat = item.Fiyat,
+                    IndirimsizFiyat = item.IndirimsizFiyat,
                     ResimYolu = item.AnaResimId == 0 ? "" : _resimDal.Get(item.AnaResimId).ResimYolu
                 });
             }
@@ -110,6 +111,7 @@ namespace Eticaret.BL
                     Id = item.Id,
                     Adi = item.Adi,
                     Fiyat = item.Fiyat,
+                    IndirimsizFiyat = item.IndirimsizFiyat,
                     ResimYolu = item.AnaResimId == 0 ? "" : _resimDal.Get(item.AnaResimId).ResimYolu
                 });
             }
@@ -126,6 +128,7 @@ namespace Eticaret.BL
 
             detay.Adi = urun.Adi;
             detay.Fiyat = urun.Fiyat;
+            detay.IndirimsizFiyat = urun.IndirimsizFiyat;
             detay.Aciklama = urun.Aciklama;
             detay.ResimYollari = _resimDal.GetResimYolu(EnuElementler.Urun, urun.Id);
 

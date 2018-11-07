@@ -20,38 +20,39 @@ namespace Eticaret.DL.Migrations
 
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
-            context.Kullanicilar.AddOrUpdate(
-             new Kullanici
-             {
-                 Adi = "admin",
-                 Soyadi = "admin",
-                 KullaniciAdi = "admin",
-                 Sifre = "albay69s",
-                 EPosta = "ondercalbay@hotmail.com",
-                 EkleyenId = 1,
-                 EklemeZamani = DateTime.Now,
-                 GuncelleyenId = 1,
-                 GuncellemeZamani = DateTime.Now,
-                 Aktif = true
-             }
-           );
+            
+           // context.Kullanicilar.AddOrUpdate(
+           //  new Kullanici
+           //  {
+           //      Adi = "admin",
+           //      Soyadi = "admin",
+           //      KullaniciAdi = "admin",
+           //      Sifre = "albay69s",
+           //      EPosta = "ondercalbay@hotmail.com",
+           //      EkleyenId = 1,
+           //      EklemeZamani = DateTime.Now,
+           //      GuncelleyenId = 1,
+           //      GuncellemeZamani = DateTime.Now,
+           //      Aktif = true
+           //  }
+           //);
 
-            context.Firmalar.AddOrUpdate(
-                new Firma
-                {
-                    Id = 1,
-                    Adi = "Firma Adý",
-                    EPosta = "xxx@xxx.com",
-                    Telefon = "X(XXX) XXX XX XX",
-                    Faks = "X(XXX) XXX XX XX",
-                    LogoUrl = "/images/logo.png",
-                    EklemeZamani = DateTime.Now,
-                    GuncelleyenId = 1,
-                    GuncellemeZamani = DateTime.Now,
-                    Aktif = true
-                }
-            );
-            context.SaveChanges();
+           // context.Firmalar.AddOrUpdate(
+           //     new Firma
+           //     {
+           //         Id = 1,
+           //         Adi = "Firma Adý",
+           //         EPosta = "xxx@xxx.com",
+           //         Telefon = "X(XXX) XXX XX XX",
+           //         Faks = "X(XXX) XXX XX XX",
+           //         LogoUrl = "/images/logo.png",
+           //         EklemeZamani = DateTime.Now,
+           //         GuncelleyenId = 1,
+           //         GuncellemeZamani = DateTime.Now,
+           //         Aktif = true
+           //     }
+           // );
+           // context.SaveChanges();
         }
     }
 }

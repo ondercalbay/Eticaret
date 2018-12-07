@@ -84,7 +84,9 @@ namespace Eticaret.BL
             else
             {
                 int i = Convert.ToInt32(id.ToString());
-                return Mapper.Map<KategoriEditDto>(_dal.Get(i));
+                KategoriEditDto dto = Mapper.Map<KategoriEditDto>(_dal.Get(i));
+                dto.UzunAdi = GetAdi(dto.UstKategoriId, dto.Adi);
+                return dto;
             }
         }
 

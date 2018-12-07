@@ -23,17 +23,26 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.UstKategoriId, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownList("UstKategoriId", null, htmlAttributes: new { @class = "form-control" })
 
+        @Html.LabelFor(model => model.UstKategoriId, htmlAttributes: new { @class = "control-label col-md-4" })
+      
+        <div class="col-md-10">
+            @if (Request["ustKategoriId"] == null)
+            {
+                @Html.DropDownList("UstKategoriId", null, htmlAttributes: new { @class = "form-control" })
+            }
+            else
+            {
+                @Html.DropDownList("UstKategoriId", null, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
+            }
         </div>
+      
     </div>
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value="Kaydet" class="btn btn-outline-success" />
-            <a href="../Index" value="Kaydet" class="btn btn-outline-danger">Listeye Geri Dön</a>
+            <a href="/Yonetim/Kategoriler/" value="Kaydet" class="btn btn-outline-danger">Listeye Geri Dön</a>
         </div>
     </div>
 }

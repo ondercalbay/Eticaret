@@ -39,9 +39,16 @@ namespace Eticaret.WebUI.Areas.Yonetim.Controllers
             }
 
             IEnumerable<KategoriListDto> kategoriler = _manager.Get(new Kategori());
-            List<SelectListItem> selectkategoriler = new SelectList(kategoriler, "Id", "Adi", editDto.UstKategoriId).ToList();
-
+            List<SelectListItem> selectkategoriler = new SelectList(kategoriler, "Id", "UzunAdi", editDto.UstKategoriId).ToList();
+            for (int i = selectkategoriler.Count-1; i > -1; i--)
+            {
+                if (editDto.Id != 0 && editDto.UzunAdi.Trim() != "" && selectkategoriler[i].Text.Contains(editDto.UzunAdi))
+                {
+                    selectkategoriler.Remove(selectkategoriler[i]);
+                }
+            }
             selectkategoriler.Insert(0, new SelectListItem() { Value = "", Text = "Seçiniz" });
+
             ViewBag.UstKategoriId = selectkategoriler;
             return View(editDto);
         }

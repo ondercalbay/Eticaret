@@ -7,7 +7,7 @@
 
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edit", "Kategoriler", FormMethod.Post, new { encType = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
@@ -25,7 +25,7 @@
     <div class="form-group">
 
         @Html.LabelFor(model => model.UstKategoriId, htmlAttributes: new { @class = "control-label col-md-4" })
-      
+
         <div class="col-md-10">
             @if (Request["ustKategoriId"] == null)
             {
@@ -36,8 +36,47 @@
                 @Html.DropDownList("UstKategoriId", null, htmlAttributes: new { @class = "form-control", disabled = "disabled" })
             }
         </div>
-      
+
     </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.MenuTipi, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EnumDropDownListFor(model => model.MenuTipi, new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.MenuTipi, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="row">
+
+
+
+    </div>
+
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.LabelFor(model => model.ResimYolu, htmlAttributes: new { @class = "control-label col-md-2" })
+
+            @if (!Model.ResimYolu.IsEmpty())
+            {
+                <div class="col-md-6">
+                    <div class="thumbnail">
+                        <a href=@Model.ResimYolu>
+                            <img src=@Model.ResimYolu alt="Lights" style="width:100%">
+                        </a>
+                    </div>
+                </div>
+            }
+
+            <div class="col-md-6">
+                <div class="input-group">
+                    <input type="file" name="ResimPost" id="ResimPost" class="form-control" />                    
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">

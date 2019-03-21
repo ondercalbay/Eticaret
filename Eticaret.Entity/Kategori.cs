@@ -15,5 +15,11 @@ namespace Eticaret.Entity
         public string Url { get; set; }
 
         public int? UstKategoriId { get; set; }
+
+
+        [Required]
+        public EnuMenuTipi MenuTipi { get; set; }
+
+        public string ResimYolu { get; set; }
     }
 }

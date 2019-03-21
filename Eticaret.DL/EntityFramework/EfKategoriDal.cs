@@ -58,6 +58,8 @@ namespace Eticaret.DL.EntityFramework
             newEnt.Adi = ent.Adi;
             newEnt.Url = ent.Adi.ToUrl();
             newEnt.UstKategoriId = ent.UstKategoriId;
+            newEnt.MenuTipi = ent.MenuTipi;
+            newEnt.ResimYolu = ent.ResimYolu;
             newEnt.GuncelleyenId = ent.GuncelleyenId;
             newEnt.GuncellemeZamani = DateTime.Now;
             _context.SaveChanges();

@@ -4,33 +4,89 @@
     <li class="current"><a href="/"><div>Anasayfa</div><span>Anasayfa</span></a></li>
     @foreach (var item in Model)
     {
-        <li class="mega-menu">
-            <a href=@("/Urunler/" + item.Url)><div>@item.Adi</div><span>@item.Adi</span></a>
+        switch (item.MenuTipi)
+        {
+            case Eticaret.Entity.EnuMenuTipi.Normal:
+                <li>
+                    <a href=@("/Urunler/" + item.Url)><div>@item.Adi</div><span>@item.Adi</span></a>
 
-            @if (item.AltMenuler.Count > 0)
-            {
-                <div class="mega-menu-content style-2 clearfix">
-                    <ul class="mega-menu-column col-md-3">
-                        @foreach (var item2 in item.AltMenuler)
-                        {
-                            <li class="mega-menu-title">
-                                <a href=@("/Urunler/" + item2.Url)><div>@item2.Adi</div></a>
-
-                                @if (item2.AltMenuler.Count > 0)
+                    @if (item.AltMenuler.Count > 0)
+                    {
+                        <div class="mega-menu-content style-2 clearfix">
+                            <ul class="mega-menu-column col-md-3">
+                                @foreach (var item2 in item.AltMenuler)
                                 {
-                                    <ul>
-                                        @foreach (var item3 in item2.AltMenuler)
+                                    <li class="mega-menu-title">
+                                        <a href=@("/Urunler/" + item2.Url)><div>@item2.Adi</div></a>
+
+                                        @if (item2.AltMenuler.Count > 0)
                                         {
-                                            <li><a href=@("/Urunler/" + item3.Url)><div>@item3.Adi</div></a></li>
+                                            <ul>
+                                                @foreach (var item3 in item2.AltMenuler)
+                                                {
+                                                    <li><a href=@("/Urunler/" + item3.Url)><div>@item3.Adi</div></a></li>
+                                                }
+                                            </ul>
                                         }
-                                    </ul>
+                                    </li>
                                 }
-                            </li>
-                        }
-                    </ul>
-                </div>
-            }
-        </li>
+                            </ul>
+                        </div>
+                    }
+                </li>
+                break;
+            case Eticaret.Entity.EnuMenuTipi.BuyukMenu:
+                <li class="mega-menu">
+                    <a href=@("/Urunler/" + item.Url)><div>@item.Adi</div><span>@item.Adi</span></a>
+
+                    @if (item.AltMenuler.Count > 0)
+                    {
+                        <div class="mega-menu-content style-2 clearfix">
+                            <ul class="mega-menu-column col-md-3">
+                                @foreach (var item2 in item.AltMenuler)
+                                {
+                                    <li class="mega-menu-title">
+                                        <a href=@("/Urunler/" + item2.Url)><div>@item2.Adi</div></a>
+
+                                        @if (item2.AltMenuler.Count > 0)
+                                        {
+                                            <ul>
+                                                @foreach (var item3 in item2.AltMenuler)
+                                                {
+                                                    <li><a href=@("/Urunler/" + item3.Url)><div>@item3.Adi</div></a></li>
+                                                }
+                                            </ul>
+                                        }
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    }
+                </li>
+                break;
+            case Eticaret.Entity.EnuMenuTipi.Acilmaz:
+                <li class="current">
+                    @if (item.AltMenuler.Count == 0)
+                    {
+                        <a href=@String.Format("/Urunler/{0}",item.Url)>
+                            <div>@item.Adi</div>
+                            <span>@item.Adi</span>
+                        </a>
+                    }
+                    else
+                    {
+                        <a href=@String.Format("/Kategoriler/{0}",item.Url)>
+                            <div>@item.Adi</div>
+                            <span>@item.Adi</span>
+                        </a>
+                    }
+                </li>
+                break;
+            default:
+                break;
+        }
+
+
 
 
     }

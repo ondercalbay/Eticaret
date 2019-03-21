@@ -4078,6 +4078,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\AuthorizeUserAccessLevel.cs" />
+    <Compile Include="Helpers\FileHelper.cs" />
     <Compile Include="Helpers\FirmaHelper.cs" />
     <Compile Include="Helpers\UserHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -4135,6 +4136,7 @@
     <Content Include="Views\Home\Iletisim.cshtml" />
     <Content Include="Views\Home\_Sayfa.cshtml" />
     <Content Include="Views\Home\Hakkimizda.cshtml" />
+    <Content Include="Views\Kategoriler\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -4147,7 +4149,6 @@
     <Folder Include="Areas\Yonetim\Models\" />
     <Folder Include="Content\Thema\admin\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Kategoriler\" />
     <Folder Include="Views\Kullanicilar\" />
     <Folder Include="Views\Resimler\" />
     <Folder Include="Views\Sayfalar\" />

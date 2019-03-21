@@ -101,6 +101,8 @@ namespace Eticaret.BL
                 altMenu.Id = item.Id;
                 altMenu.Adi = item.Adi;
                 altMenu.Url = item.Url;
+                altMenu.MenuTipi = item.MenuTipi;
+                altMenu.ResimYolu = item.ResimYolu;
                 altMenu.AltMenuler = GetMenu(altMenu);
                 altmenuler.Add(altMenu);
             }            

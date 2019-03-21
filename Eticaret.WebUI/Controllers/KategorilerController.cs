@@ -11,14 +11,16 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace Eticaret.WebUI.Controllers
-{    
+{
     public class KategorilerController : Controller
     {
         IKategoriManager _manager = new KategoriManager(UserHelper.Kullanici, new EfKategoriDal());
         // GET: Kategoriler
         public ActionResult Index(string Kategori)
         {
-            return View(_manager.Get(new Kategori()));
+            var kategori = _manager.Get(new Kategori() { Url = Kategori }).FirstOrDefault();
+            ViewBag.Title = kategori.UzunAdi;
+            return View(_manager.GetMenu(new KategoriMenuDto() { Id = kategori.Id }));
         }
 
         // GET: Kategoriler/Edit/5

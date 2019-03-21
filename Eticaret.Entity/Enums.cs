@@ -31,4 +31,15 @@ namespace Eticaret.Entity
         [Display(Name = "İndirimdekiler")]
         Indrimdekiler = 3
     }
+
+    public enum EnuMenuTipi
+    {
+        [Display(Name = "Normal")]
+        Normal = 0,
+        [Display(Name = "Büyük Menu")]
+        BuyukMenu = 1,
+        [Display(Name = "Acilmaz")]
+        Acilmaz = 2
+        
+    }
 }

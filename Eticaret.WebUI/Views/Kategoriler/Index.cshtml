@@ -1,0 +1,62 @@
+﻿@model List<Eticaret.Dto.Kategori.KategoriMenuDto>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Page Title
+        ============================================= -->
+<section id="page-title">
+
+    <div class="container clearfix">
+        <h1>@ViewBag.Title</h1>
+        <span>Ait Kategoriler</span>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Anasayfa</a></li>
+            <li class="breadcrumb-item active" aria-current="page">@ViewBag.Title</li>
+        </ol>
+    </div>
+
+</section><!-- #page-title end -->
+<!-- Content
+============================================= -->
+<section id="content">
+
+    <div class="content-wrap">
+
+        <div class="container clearfix">
+            <div id="shop" class="shop grid-container clearfix">
+                @foreach (var item in Model)
+                {
+
+                    string href = "";
+                    if (item.AltMenuler.Count == 0)
+                    {
+                        href = "/Urunler/" + item.Url;
+                    }
+                    else
+                    {
+                        href = "/Kategoriler/" + item.Url;
+                    }
+
+                <div class="product clearfix">
+                    <div class="product-image">
+                        <a href=@href>
+                            <img src=@item.ResimYolu alt=@item.Adi>
+                        </a>
+                    </div>
+                    <div class="product-desc">
+                        <a href=@href>
+                            <div class="product-title"><h3>@item.Adi</h3></div>
+                        </a>
+                    </div>
+                </div>
+                  
+                }
+            </div><!-- #shop end -->
+
+        </div>
+
+    </div>
+
+</section><!-- #content end -->

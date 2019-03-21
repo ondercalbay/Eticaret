@@ -6,7 +6,9 @@ using Eticaret.IL;
 using Eticaret.WebUI.Helpers;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Web;
 using System.Web.Mvc;
 
 namespace Eticaret.WebUI.Areas.Yonetim.Controllers
@@ -18,7 +20,7 @@ namespace Eticaret.WebUI.Areas.Yonetim.Controllers
         // GET: Kategoriler
         public ActionResult Index()
         {
-            return View(_manager.Get(new Kategori()));
+            return View(_manager.Get(new Kategori()));            
         }
 
         // GET: Kategoriler/Edit/5
@@ -40,7 +42,7 @@ namespace Eticaret.WebUI.Areas.Yonetim.Controllers
 
             IEnumerable<KategoriListDto> kategoriler = _manager.Get(new Kategori());
             List<SelectListItem> selectkategoriler = new SelectList(kategoriler, "Id", "UzunAdi", editDto.UstKategoriId).ToList();
-            for (int i = selectkategoriler.Count-1; i > -1; i--)
+            for (int i = selectkategoriler.Count - 1; i > -1; i--)
             {
                 if (editDto.Id != 0 && editDto.UzunAdi.Trim() != "" && selectkategoriler[i].Text.Contains(editDto.UzunAdi))
                 {
@@ -55,10 +57,15 @@ namespace Eticaret.WebUI.Areas.Yonetim.Controllers
 
         // POST: Kategoriler/Edit/5
         [HttpPost]
-        public ActionResult Edit(KategoriEditDto editDto)
+        public ActionResult Edit(KategoriEditDto editDto, HttpPostedFileBase ResimPost = null)
         {
             ViewBag.Message = "Sayfalar";
             ViewBag.UstKategoriler = _manager.Get(new Kategori());
+            if (ResimPost != null)
+            {
+                editDto.ResimYolu= FileHelper.SaveFile(ResimPost);
+            }
+
             if (editDto.Id == 0)
             {
                 _manager.Add(editDto);
